@@ -334,6 +334,17 @@ section {
     margin-right: 5%;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 20vh;
+}
+
+footer div {
+    margin: 3%;
+}
+
 @media (max-width: 991px) {
     .nav-link {
         margin: 1rem 1rem -1rem 2rem;

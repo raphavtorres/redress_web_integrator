@@ -225,6 +225,21 @@ main {
 
 }
 
+.carousel-indicators [data-bs-target] {
+    border-radius: 50%;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--blue);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 section {
     height: 100%;
     margin-top: 5%;
@@ -268,6 +283,7 @@ section {
     border-radius: 0px;
     background-color: var(--yellow)!important;
     border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
     color: var(--black)!important;
     text-align: center;
 }
@@ -280,11 +296,11 @@ section {
 
 .cart-btn-card {
     background-color: var(--yellow);
-    height: 2.6rem;
-    width: 2.6rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
     background-image: url(images/icon-cart.svg);
-    background-size: 1.5rem;
+    background-size: 1rem;
     border: none;
     background-position: center;
     background-repeat: no-repeat;
@@ -293,6 +309,7 @@ section {
 .card img {
     object-fit: cover;
     object-position: top;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
 }
 
 .modal-content {
@@ -300,6 +317,7 @@ section {
     justify-content: space-between;
     flex-direction: row;
     padding: 2%;
+    margin-top: 10%;
 }
 
 .div-img-modal {
@@ -324,4 +342,26 @@ section {
     .div-icons-nav {
         visibility: hidden;
     }
+
+    .modal-content {
+        margin-top: 15%;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    #carousel-sec {
+        margin-top: 20%;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-bottom: -15px;
+    }
+
+    .modal-content {
+        margin-top: 20%;
+    }
+    
 }

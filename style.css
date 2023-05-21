@@ -146,6 +146,7 @@ table {
     --dark-blue: #0E1527;
     --blue: #2C3B5A;
     --yellow: #F2C778;
+    --dark-yellow: #D9A86D;
     --black: #131313;
 }
 
@@ -206,11 +207,11 @@ nav {
 
 main {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 1980px;
 }
 
 #carousel-sec {
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 .carousel-item img {
@@ -234,10 +235,53 @@ section {
 }
 
 .card {
+    border-radius: 0px;
     margin: 0 0.5rem;
     width: 15rem;
-    height: 20rem;
+    height: fit-content;
+    padding: 1%;
     margin-bottom: 4%;
+}
+
+.card div {
+    /* margin: auto; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card div a {
+    margin: 0 0.2rem;
+}
+
+.card-text {
+    margin: 5%;
+}
+
+.btn {
+    border-radius: 0px;
+    background-color: var(--yellow)!important;
+    border: none;
+    color: var(--black)!important;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--dark-yellow)!important;
+    border: none;
+    color: var(--black)!important;
+}
+
+.cart-btn-card {
+    background-color: var(--yellow);
+    height: 2.6rem;
+    width: 2.6rem;
+    border-radius: 50%;
+    background-image: url(images/icon-cart.svg);
+    background-size: 1.5rem;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card img {

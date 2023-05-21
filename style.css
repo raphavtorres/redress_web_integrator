@@ -1,0 +1,277 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* THE ABOVE CSS IS A RESET, NOT MADE BY THE STUDENT RAPHAEL VALDERRAMA TORRES*/
+/* ------------------- */
+/* THE CSS BELLOW IS FROM THE STUDENTE RAPHAEL VALDERRAMA TORRES*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-size: 0.8rem;
+    --line-height: 1.2rem;
+    --dark-blue: #0E1527;
+    --blue: #2C3B5A;
+    --yellow: #F2C778;
+    --black: #131313;
+}
+
+body {
+    background: var(--dark-blue);
+    height: 100%;
+    width: 100%;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+}
+
+nav {
+    font-size: 0.8rem;
+}
+
+.navbar {
+    --bs-navbar-padding-y: 0.5rem;
+}
+
+.navbar-brand img {
+    margin-left: 2rem;
+    height: 1.5rem;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+.div-icons-nav {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-right: 3rem;
+}
+
+.div-icons-nav img {
+    height: 1rem;
+    margin: 0 1rem;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    background-image: url(images/menu-hamburguer.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.navbar-toggler {
+    font-size: var(--bs-navbar-toggler-font-size);
+    border: none;
+    border-radius: none;
+    transition: 0.5s;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+#carousel-sec {
+    margin-top: 5%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+
+}
+
+section {
+    height: 100%;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.wrapper {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    
+}
+
+.card {
+    margin: 0 0.5rem;
+    width: 15rem;
+    height: 20rem;
+    margin-bottom: 4%;
+}
+
+.card img {
+    object-fit: cover;
+    object-position: top;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2%;
+}
+
+.div-img-modal {
+    width: 40%;
+}
+
+.div-img-modal img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.div-img-details {
+    width: 50%;
+    margin-right: 5%;
+}
+
+@media (max-width: 991px) {
+    .nav-link {
+        margin: 1rem 1rem -1rem 2rem;
+    }
+
+    .div-icons-nav {
+        visibility: hidden;
+    }
+}

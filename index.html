@@ -19,7 +19,7 @@
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-                <img class="navbar-toggler-icon" src="images/logo_black.svg" alt="">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse div-nav-links" id="navbarNav">
                 <ul class="navbar-nav">
@@ -46,18 +46,19 @@
     </header>
     <main>
         <section id="carousel-sec">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="images/carousel_1.png" alt="Primeiro Slide">
+                        <img src="images/carousel_1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 h-5" src="images/carousel_2.png" alt="Segundo Slide">
+                        <img  src="images/carousel_2.png" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -69,6 +70,7 @@
                     <span class="sr-only"></span>
                 </a>
             </div>
+
         </section>
         <section id="products-sec">
             <div class="wrapper">
@@ -78,7 +80,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -88,7 +91,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -98,7 +102,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -108,7 +113,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -118,7 +124,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -128,7 +135,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -138,7 +146,8 @@
                     <hr width="80%" style="margin: auto;">
                     <p class="card-text">R$ 200,00</p>
                     <div>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Details</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">Details</a>
                         <a href="#" class="btn btn-primary cart-btn-card"></a>
                     </div>
                 </div>
@@ -168,7 +177,7 @@
                 </div>
             </div> -->
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">     
+                aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="div-img-modal">
@@ -178,7 +187,10 @@
                             <h1>PRODUCT NAME</h1>
                             <h2>R$ 200,00</h2>
                             <h5>Details</h5>
-                            <p>non dignissimos sequi nemo. Animi modi provident laudantium, omnis quo amet nihil fugiat autem dolor molestias a tempore possimus ratione id cumque doloremque suscipit rem. Placeat laboriosam, consequatur ea voluptatem accusamus tempore veritatis necessitatibus ab, doloremque accusantium recusandae quod.</p>
+                            <p>non dignissimos sequi nemo. Animi modi provident laudantium, omnis quo amet nihil fugiat
+                                autem dolor molestias a tempore possimus ratione id cumque doloremque suscipit rem.
+                                Placeat laboriosam, consequatur ea voluptatem accusamus tempore veritatis necessitatibus
+                                ab, doloremque accusantium recusandae quod.</p>
                             <h5>SIZE: P M G GG</h5>
                             <button>ADD TO CART</button>
                         </div>

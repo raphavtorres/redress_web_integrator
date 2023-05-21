@@ -173,6 +173,12 @@ nav {
 
 .nav-link {
     text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid var(--dark-blue);
 }
 
 .div-icons-nav {

@@ -408,10 +408,10 @@ section {
 
 
 /* SHOPPING CART */
-.modal-content {
+.modal-content-cart {
     margin: 0px!important;
 }
-.modal-dialog {
+.modal-dialog-cart {
     height: 100%;
     position: relative;
     width: auto;

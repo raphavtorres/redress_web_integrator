@@ -27,10 +27,10 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#products-title">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -80,8 +80,11 @@
                 </a>
             </div>
 
-        </section>
+        </section>        
         <section id="products-sec">
+            <div id="products-title">
+                <h1>Products</h1>
+            </div>
             <div class="wrapper">
                 <div class="card">
                     <img src="images/card-img-1.webp" alt="">
@@ -184,18 +187,24 @@
                             </div>
                             <div class="div-sizes-modal">
                                 <h3>Size</h3>
-                                <input type="radio" id="p" name="radio" value="p" checked>
-                                <label for="p">P</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="p" name="radio" value="p" checked>
+                                    <label class="form-check-label"for="p">P</label>
+                                </div>
 
-                                <input type="radio" id="m" name="radio" value="m">
-                                <label for="m">M</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="m" name="radio" value="m">
+                                    <label class="form-check-label"for="m">M</label>
+                                </div>
 
-                                <input type="radio" id="g" name="radio" value="g">
-                                <label for="g">G</label>
-
-                                <input type="radio" id="gg" name="radio" value="gg">
-                                <label for="gg">GG</label>
-
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="g" name="radio" value="g">
+                                    <label class="form-check-label"for="g">G</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="gg" name="radio" value="gg">
+                                    <label class="form-check-label"for="gg">GG</label>
+                                </div>
                             </div>
                             <div class="div-btn-model">
                                 <button class="btn btn-add-cart-modal">ADD TO CART</button>
@@ -210,10 +219,6 @@
             </div>
         </section>
         <section id="shop-cart-sec">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
-                Abrir modal de demonstração
-            </button>
-
             <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
                 aria-labelledby="TituloModalCentralizado" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">

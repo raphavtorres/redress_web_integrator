@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -137,8 +139,6 @@ table {
 /* ------------------- */
 /* THE CSS BELLOW IS FROM THE STUDENTE RAPHAEL VALDERRAMA TORRES*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-
 :root {
     --font-montserrat: 'Montserrat', sans-serif;
     --font-size: 0.8rem;
@@ -148,6 +148,8 @@ table {
     --yellow: #F2C778;
     --dark-yellow: #D9A86D;
     --black: #131313;
+
+    /* color: azure; */
 }
 
 body {
@@ -156,6 +158,7 @@ body {
     width: 100%;
     font-size: var(--font-size);
     line-height: var(--line-height);
+    font-family: var(--font-montserrat);
 }
 
 nav {
@@ -217,7 +220,7 @@ main {
 }
 
 #carousel-sec {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .carousel-item img {
@@ -240,9 +243,21 @@ main {
     margin-bottom: auto;
 }
 
+
+#products-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: auto;
+    color: azure;
+}
+
+
 section {
     height: 100%;
-    margin-top: 5%;
     width: 100%;
 }
 
@@ -368,6 +383,7 @@ section {
 }
 
 .div-btn-model {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
 }

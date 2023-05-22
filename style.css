@@ -412,6 +412,30 @@ section {
 #cart-header {
     background-color: var(--blue);
     color: white;
+    display: flex;
+}
+
+#cart-header button {
+    width: 10%;
+    background-color: transparent;
+    border: none;
+    background-image: url(images/back-arrow-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#div-header-cart {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-header-cart img {
+    margin-left: 20%;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* #cart-body {

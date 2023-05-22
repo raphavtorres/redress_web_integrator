@@ -178,7 +178,7 @@ nav {
 }
 
 .nav-link:hover {
-    border-bottom: 2px solid var(--dark-blue);
+    border-bottom: 2px solid var(--dark-yellow);
 }
 
 .div-icons-nav {
@@ -286,12 +286,13 @@ section {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.219);
     color: var(--black)!important;
     text-align: center;
+    transition: 0.5s;
 }
 
 .btn:hover {
     background-color: var(--dark-yellow)!important;
     border: none;
-    color: var(--black)!important;
+    color: white!important;
 }
 
 .cart-btn-card {
@@ -383,19 +384,72 @@ section {
     margin-right: 1rem;
 }
 
-.btn-modal {
+.btn-add-cart-modal {
     width: 18rem;
     height: 2rem;
     border: none;
-    background-color: var(--yellow);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.199);
-    transition: 0.5s;
 }
 
-.btn-modal:hover {
-    background-color: var(--dark-yellow);
+
+/* SHOPPING CART */
+.modal-content {
+    margin: 0px!important;
+}
+.modal-dialog {
+    height: 100%;
+    position: relative;
+    width: auto;
+    pointer-events: none;
+    margin: 0px 0px auto auto;
+}
+
+#shop-cart {
+    height: 100vh;
+    display: block;
+    padding: 0px;
+}
+
+#cart-header {
+    background-color: var(--blue);
     color: white;
 }
+
+/* #cart-body {
+
+} */
+
+#cart-footer {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    background-color: var(--blue);
+    color: white;
+    width: 100%;
+}
+
+#div-footer-cart {
+    margin: 1rem 0px;
+    width: 100%;
+    display: block;
+}
+
+#div-price-cart {
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 1rem 1rem 1rem;
+}
+
+#div-btn-cart {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#div-btn-cart button {
+    height: 2.5rem;
+    width: 70%;
+}
+
 
 footer {
     display: flex;

@@ -158,7 +158,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id="prod-detail-sec">
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -192,7 +192,7 @@
                                 
                             </div>
                             <div class="div-btn-model">
-                                <button class="btn-modal">ADD TO CART</button>
+                                <button class="btn btn-add-cart-modal">ADD TO CART</button>
                             </div>
                             <div class="div-img-icon-model">
                                 <img src="images/icon-delivery truck.svg" alt="">
@@ -200,6 +200,40 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section id="shop-cart-sec">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                Abrir modal de demonstração
+            </button>
+            
+            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div id="shop-cart" class="modal-content">
+                    <div id="cart-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <img src="images/icon-cart.svg" alt="">
+                        <h3>Shopping Cart</h3>
+                    </div>
+                    <div id="cart-body">
+                        <p>CONTENT</p>
+                    </div>
+                    <div id="cart-footer">
+                        <div id="div-footer-cart">
+                            <div id="div-price-cart">
+                                <h3>SUBTOTAL</h3>
+                                <p>R$ 600,00</p>
+                            </div>
+                            <div id="div-btn-cart">
+                                <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 </div>
             </div>
         </section>

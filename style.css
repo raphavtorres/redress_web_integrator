@@ -159,7 +159,7 @@ body {
 }
 
 nav {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .navbar {
@@ -178,7 +178,7 @@ nav {
 }
 
 .nav-link:hover {
-    border-bottom: 2px solid var(--dark-yellow);
+    color: var(--dark-yellow);
 }
 
 .div-icons-nav {

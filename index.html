@@ -39,7 +39,11 @@
                 <div class="div-icons-nav">
                     <img src="images/icon-mail.svg" alt="">
                     <img src="images/icon-search.svg" alt="">
-                    <img src="images/icon-cart.svg" alt="">
+
+                    <a href="#" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                        <img src="images/icon-cart.svg" alt="">
+                    </a>
+                    
                 </div>
             </div>
         </nav>
@@ -60,10 +64,10 @@
                         <img src="images/carousel_1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img  src="images/carousel_2.png" class="d-block w-100" alt="...">
+                        <img src="images/carousel_2.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img  src="images/carousel_3.png" class="d-block w-100" alt="...">
+                        <img src="images/carousel_3.png" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -173,23 +177,25 @@
                             </div>
                             <div class="div-detail-modal">
                                 <h3 class="detail-modal">Details</h3>
-                                <p>non dignissimos sequi nemo. Animi modi provident laudantium, omnis quo amet nihil fugiat
-                                    autem dolor molestias a tempore possimus ratione id cumque doloremque suscipit rem.</p>
+                                <p>non dignissimos sequi nemo. Animi modi provident laudantium, omnis quo amet nihil
+                                    fugiat
+                                    autem dolor molestias a tempore possimus ratione id cumque doloremque suscipit rem.
+                                </p>
                             </div>
                             <div class="div-sizes-modal">
                                 <h3>Size</h3>
                                 <input type="radio" id="p" name="radio" value="p" checked>
                                 <label for="p">P</label>
-                                
+
                                 <input type="radio" id="m" name="radio" value="m">
                                 <label for="m">M</label>
-                                
+
                                 <input type="radio" id="g" name="radio" value="g">
                                 <label for="g">G</label>
-                                
+
                                 <input type="radio" id="gg" name="radio" value="gg">
                                 <label for="gg">GG</label>
-                                
+
                             </div>
                             <div class="div-btn-model">
                                 <button class="btn btn-add-cart-modal">ADD TO CART</button>
@@ -207,45 +213,58 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
                 Abrir modal de demonstração
             </button>
-            
-            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+
+            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+                aria-labelledby="TituloModalCentralizado" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                <div id="shop-cart" class="modal-content">
-                    <div id="cart-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"></button>
-                        <div id="div-header-cart">
-                            <img src="images/icon-cart-white.svg" alt="">
-                            <h2>Shopping Cart</h2>
-                        </div>   
-                    </div>
-                    <div id="cart-body">
-                        <p>CONTENT</p>
-                    </div>
-                    <div id="cart-footer">
-                        <div id="div-footer-cart">
-                            <div id="div-price-cart">
-                                <h3>SUBTOTAL</h3>
-                                <p>R$ 600,00</p>
+                    <div id="shop-cart" class="modal-content">
+                        <div id="cart-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"></button>
+                            <div id="div-header-cart">
+                                <img src="images/icon-cart-white.svg" alt="">
+                                <h2>Shopping Cart</h2>
                             </div>
-                            <div id="div-btn-cart">
-                                <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                        </div>
+                        <div id="cart-body">
+                            <p>CONTENT</p>
+                        </div>
+                        <div id="cart-footer">
+                            <div id="div-footer-cart">
+                                <div id="div-price-cart">
+                                    <h3>SUBTOTAL</h3>
+                                    <p>R$ 600,00</p>
+                                </div>
+                                <div id="div-btn-cart">
+                                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
+
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <div><h5>Exlusive Services</h5></div>
-        <div><h5>Need Help?</h5></div>
-        <div><h5>The company</h5></div>
-        <div><h5>Find Us On</h5></div>
-        <div><h5>Sign Up for Updates</h5></div>
-        <div><p>&copy; 2023 REDRESS - All rights reserved.</p></div>
-        
+        <div>
+            <h5>Exlusive Services</h5>
+        </div>
+        <div>
+            <h5>Need Help?</h5>
+        </div>
+        <div>
+            <h5>The company</h5>
+        </div>
+        <div>
+            <h5>Find Us On</h5>
+        </div>
+        <div>
+            <h5>Sign Up for Updates</h5>
+        </div>
+        <div>
+            <p>&copy; 2023 REDRESS - All rights reserved.</p>
+        </div>
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

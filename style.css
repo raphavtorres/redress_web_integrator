@@ -316,8 +316,11 @@ section {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 2%;
     margin-top: 10%;
+    border-radius: 0px;
+    border: none;
 }
 
 .div-img-modal {
@@ -329,9 +332,69 @@ section {
     object-fit: cover;
 }
 
+.prod-and-price-modal {
+    margin: 5% 0;
+}
+
+.prod-and-price-modal h1{
+    margin: 3% 0;
+    font-size: large;
+}
+
+.prod-and-price-modal h2{
+    margin: 3% 0;
+    font-size: larger;
+    color: var(--blue);
+}
+
+.prod-and-price-modal h3{
+    font-size: medium;
+}
+
+.div-detail-modal {
+    width: 100%;
+    text-align: justify;
+    margin: 5% 0;
+}
+
 .div-img-details {
     width: 50%;
     margin-right: 5%;
+}
+
+.div-sizes-modal label {
+    margin: 2% 5% 5% 0;
+}
+
+.div-btn-model {
+    display: flex;
+    justify-content: center;
+}
+
+.div-img-icon-model {
+    margin-top: 5%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.div-img-icon-model img {
+    height: 1.1rem;
+    margin-right: 1rem;
+}
+
+.btn-modal {
+    width: 18rem;
+    height: 2rem;
+    border: none;
+    background-color: var(--yellow);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.199);
+    transition: 0.5s;
+}
+
+.btn-modal:hover {
+    background-color: var(--dark-yellow);
+    color: white;
 }
 
 footer {

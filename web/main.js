@@ -71,7 +71,7 @@ for (var i = 0; i < name_products.length; i++) {
             <p class="card-text">R$ ${price_products[i]}</p>
             <div>
                 <a onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
-                    'data-target=".bd-example-modal-lg">Details</a>
+                    data-target=".bd-example-modal-lg">Details</a>
                 <a href="#" class="btn btn-primary cart-btn-card"></a>
             </div>
         </div>

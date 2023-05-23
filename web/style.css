@@ -274,7 +274,7 @@ section {
     border-radius: 0px;
     margin: 0 0.5rem;
     width: 15rem;
-    height: fit-content;
+    min-height: 27rem;
     padding: 1%;
     margin-bottom: 4%;
 }

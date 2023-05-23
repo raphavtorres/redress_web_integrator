@@ -1,38 +1,38 @@
 var name_products = [
-    "Jaqueta",
-    "Camiseta Dry Fit", 
-    "2", 
-    "3", 
-    "4", 
-    "5", 
-    "6"
+    "Blusão Em Moletom Com Bolso Canguru Com Lettering Fearless Preto",
+    "Blusão Fechado Básico Em Moletom Com Capuz E Bolso Canguru Marrom", 
+    "Jaqueta Com Capuz E Fechamento Frontal Preto", 
+    "Jaqueta Puffer Em Poliamida Com Gomos E Forro De Sherpa Preto", 
+    "Calça Jogger Cargo Em Poliamida Com Bolsos Utilitários Marrom", 
+    "Calça Slim Em Soft Touch Com Textura E Barra Dobrada Bege", 
+    "Bermuda Slim Jeans Com Rasgos E Bolsos Preto Fosco"
 ]
 var price_products = [
-    200.00, 
-    90.00, 
-    2, 
-    3, 
-    4, 
-    5, 
-    6
+    179.90, 
+    159.90, 
+    319.90, 
+    359.90, 
+    179.90, 
+    199.90, 
+    119.90
 ]
 var images_products = [
-    "images/card-img-1.webp", 
-    "images/card-img-2.webp", 
-    "images/card-img-2.webp", 
-    "images/card-img-2.webp",
-    "images/card-img-2.webp",
-    "images/card-img-2.webp",
-    "images/card-img-2.webp",
+    "images/img-card/card-img-0.webp", 
+    "images/img-card/card-img-1.webp", 
+    "images/img-card/card-img-2.webp", 
+    "images/img-card/card-img-3.webp",
+    "images/img-card/card-img-4.webp",
+    "images/img-card/card-img-5.webp",
+    "images/img-card/card-img-6.webp",
 ]
 var desc_products = [
-    "Essa é uma jaqueta",
-    "Essa é uma camiseta para treino",
-    "2", 
-    "3", 
-    "4", 
-    "5", 
-    "6"
+    'Blusão em moletom com gola com capuz, punhos ajustados e bolso canguru com etiquetinha aplicada com lettering "Fearless". Confeccionado em material responsável.',
+    "Blusão masculino em moletom, com capuz, cava raglan e punhos ajustados. Além de mega confortável por seu tecido ser em moletom, essa peça é cheia de estilo, além de muito descolada. ",
+    "Jaqueta com capuz em cor contrastante, fechamento frontal por zíper e bolsos.", 
+    "Aconchegante e confortável, a jaqueta puffer com capuz, zíper, gomos e forro de sherpa, é perfeita para compor seus visuais de inverno. O modelo cheio de estilo, promove looks perfeitos para usar em diversos momentos casuais.", 
+    "Calça jogger cargo, com cós elástico, cordão para ajuste, bolsos cargo com zíper e punhos ajustados.", 
+    "Calça masculina em tecido soft touch, modelo slim, confeccionada com material mais sustentável, com leve textura, cós elástico, cordão para ajuste, bolsos e barra dobrada.", 
+    "Bermuda jeans masculina, modelo slim, com bolsos e rasgos. A modelagem slim da peça ajusta elegantemente ao corpo, e seus rasgos dão aquele toque final super estiloso."
 ]
 
 function createModal(item) {
@@ -64,7 +64,7 @@ var wrap = document.querySelector('.wrapper');
 
 for (var i = 0; i < name_products.length; i++) {
     var card = '<div class="card">' +
-    `<img src="images/card-img-${i}.webp" alt="">` +
+    `<img src="images/img-card/card-img-${i}.webp" alt="">` +
     `<h5 class="card-text">${name_products[i]}</h5>`+
     '<hr width="80%" style="margin: auto;">'+
     `<p class="card-text">R$ ${price_products[i]}</p>`+

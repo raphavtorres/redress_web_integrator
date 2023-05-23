@@ -63,17 +63,19 @@ function createModal(item) {
 var wrap = document.querySelector('.wrapper');
 
 for (var i = 0; i < name_products.length; i++) {
-    var card = '<div class="card">' +
-    `<img src="images/img-card/card-img-${i}.webp" alt="">` +
-    `<h5 class="card-text">${name_products[i]}</h5>`+
-    '<hr width="80%" style="margin: auto;">'+
-    `<p class="card-text">R$ ${price_products[i]}</p>`+
-    '<div>'+
-        `<a onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"`+
-            'data-target=".bd-example-modal-lg">Details</a>'+
-        '<a href="#" class="btn btn-primary cart-btn-card"></a>'+
-    '</div>'+
-    '</div>';
+    var card = `
+        <div class="card">
+            <img src="images/img-card/card-img-${i}.webp" alt="">
+            <h5 class="card-text">${name_products[i]}</h5>
+            <hr width="80%" style="margin: auto;">
+            <p class="card-text">R$ ${price_products[i]}</p>
+            <div>
+                <a onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
+                    'data-target=".bd-example-modal-lg">Details</a>
+                <a href="#" class="btn btn-primary cart-btn-card"></a>
+            </div>
+        </div>
+    `;
 
     wrap.innerHTML += card;
 }

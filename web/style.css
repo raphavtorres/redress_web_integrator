@@ -463,30 +463,30 @@ section {
     overflow-y: auto;
 }
 
-#cart-content {
+.cart-content {
     display: flex;
     height: fit-content;
     margin-right: 1rem;
 }
 
-#cart-content-text {
+.cart-content-text {
     width: 100%;
     margin-left: 1rem;
 }
 
-#cart-content-text p {
+.cart-content-text p {
     text-align: justify;
     width: 85%;
     margin: 0.5rem 0;
     font-size: 0.7rem;
 }
 
-#txt-and-delbtn {
+.txt-and-delbtn {
     display: flex;
     justify-content: space-between;
 }
 
-#cart-del-prod {
+.cart-del-prod {
     background-image: url(images/icon-del-prod.svg);
     background-size: 1rem;
     background-position: center;
@@ -498,12 +498,12 @@ section {
     align-self: flex-end;
 }
 
-#img-prod-cart {
+.img-prod-cart {
     width: 7rem;
     height: fit-content;
 }
 
-#prod-price-cart {
+.prod-price-cart {
     text-align: end;
 }
 

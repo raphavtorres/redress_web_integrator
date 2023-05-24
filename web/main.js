@@ -67,23 +67,25 @@ for (var i = 0; i < name_products.length; i++) {
     wrap.innerHTML += card;
 }
 
-function addProdCart(img, name, price, desc){
-    var cartBody = document.querySelector("#cart-body");
-    var totalPrice = document.querySelector("#total-price-cart");
+var cartBody = document.querySelector("#cart-body");
+var totalPrice = document.querySelector("#total-price-cart");
+
+function addProdCart(index, name, price, desc){
+    
     var content = `
-    <div id="cart-content">
-        <img id="img-prod-cart" src="images/img-card/card-img-${img}.webp" alt="">
-        <div id="cart-content-text">
-            <div id="txt-and-delbtn">
+    <div id="card-content-${index}" class="cart-content">
+        <img class="img-prod-cart" src="images/img-card/card-img-${index}.webp" alt="">
+        <div class="cart-content-text">
+            <div class="txt-and-delbtn">
                 <h3>${name}</h3>
-                <button id="cart-del-prod"></button>
+                <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
             </div>
             <p>${desc}</p>
             <input class="amount-prod-cart" type="number" name="" id="" value="1" min="1">
-            <h3 id="prod-price-cart">R$ ${price.toFixed(2)}</h3>
+            <h3 class="prod-price-cart">R$ ${price.toFixed(2)}</h3>
         </div>
     </div>
-    <hr width="90%" style="margin: 1rem 0"></hr>`
+    <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
 
     cartBody.innerHTML += content;
     
@@ -94,4 +96,16 @@ function addProdCart(img, name, price, desc){
     priceProd = parseFloat(price);
 
     totalPrice.innerHTML = priceTotal + priceProd;
+}
+
+function dellProdCart(index, price) {
+    var elementToRemove = document.querySelector(`#card-content-${index}`);
+    var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);
+    cartBody.removeChild(elementToRemove);
+    cartBody.removeChild(hrToRemove);
+
+    priceTotal = parseFloat(totalPrice.innerHTML);
+    priceProd = parseFloat(price);
+
+    priceTotal -= priceProd;
 }

@@ -423,6 +423,7 @@ section {
     height: 100vh;
     display: block;
     padding: 0px;
+    overflow: hidden!important;
 }
 
 #cart-header {
@@ -456,18 +457,28 @@ section {
 
 /* CART */
 #cart-body {
-    margin: 1rem;
+    margin: 1rem 0 1rem 1rem;
     font-size: 0.9rem;
+    height: 100%;
+    overflow-y: auto;
 }
 
 #cart-content {
     display: flex;
     height: fit-content;
+    margin-right: 1rem;
 }
 
 #cart-content-text {
     width: 100%;
     margin-left: 1rem;
+}
+
+#cart-content-text p {
+    text-align: justify;
+    width: 85%;
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
 }
 
 #txt-and-delbtn {
@@ -494,6 +505,13 @@ section {
 
 #prod-price-cart {
     text-align: end;
+}
+
+.amount-prod-cart {
+    height: 1.5rem;
+    width: 2.5rem;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 #cart-footer {

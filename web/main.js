@@ -26,7 +26,7 @@ var images_products = [
     "images/img-card/card-img-6.webp",
 ]
 var desc_products = [
-    'Blusão em moletom com gola com capuz, punhos ajustados e bolso canguru com etiquetinha aplicada com lettering "Fearless". Confeccionado em material responsável.',
+    "Blusão em moletom com gola com capuz, punhos ajustados e bolso canguru com etiquetinha aplicada com lettering Fearless. Confeccionado em material responsável.",
     "Blusão masculino em moletom, com capuz, cava raglan e punhos ajustados. Além de mega confortável por seu tecido ser em moletom, essa peça é cheia de estilo, além de muito descolada. ",
     "Jaqueta com capuz em cor contrastante, fechamento frontal por zíper e bolsos.", 
     "Aconchegante e confortável, a jaqueta puffer com capuz, zíper, gomos e forro de sherpa, é perfeita para compor seus visuais de inverno. O modelo cheio de estilo, promove looks perfeitos para usar em diversos momentos casuais.", 
@@ -42,7 +42,7 @@ function createModal(item) {
     var desc_elem = document.querySelector("#desc_elem");
 
     name_elem.innerHTML = name_products[item];
-    price_elem.innerHTML = "R$ " + price_products[item];
+    price_elem.innerHTML = "R$ " + price_products[item].toFixed(2);
     image_elem.src = images_products[item];
     desc_elem.innerHTML = desc_products[item];
 }
@@ -55,11 +55,11 @@ for (var i = 0; i < name_products.length; i++) {
             <img src="images/img-card/card-img-${i}.webp" alt="">
             <h5 class="card-text">${name_products[i]}</h5>
             <hr width="80%" style="margin: auto;">
-            <p class="card-text">R$ ${price_products[i]}</p>
+            <p class="card-text">R$ ${price_products[i].toFixed(2)}</p>
             <div>
                 <a onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
                     data-target=".bd-example-modal-lg">Details</a>
-                <a href="#" class="btn btn-primary cart-btn-card"></a>
+                <a onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
             </div>
         </div>
     `;
@@ -67,31 +67,31 @@ for (var i = 0; i < name_products.length; i++) {
     wrap.innerHTML += card;
 }
 
-
-function addProdCart(){
+function addProdCart(img, name, price, desc){
+    var cartBody = document.querySelector("#cart-body");
+    var totalPrice = document.querySelector("#total-price-cart");
     var content = `
-    <!-- PROD IMG -->
     <div id="cart-content">
-        <img id="img-prod-cart" src="images/img-card/card-img-1.webp" alt="">
+        <img id="img-prod-cart" src="images/img-card/card-img-${img}.webp" alt="">
         <div id="cart-content-text">
             <div id="txt-and-delbtn">
-                <h3>Product Name</h3>
-        
-                <!-- ICON X -->
+                <h3>${name}</h3>
                 <button id="cart-del-prod"></button>
             </div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <h3 id="prod-price-cart">R$ 200,00</h3>
+            <p>${desc}</p>
+            <input class="amount-prod-cart" type="number" name="" id="" value="1" min="1">
+            <h3 id="prod-price-cart">R$ ${price.toFixed(2)}</h3>
         </div>
     </div>
-    <hr width="100%" style="margin: 1rem auto;"></hr>`
-    return content;
+    <hr width="9%" style="margin: 1rem 0"></hr>`
+
+    cartBody.innerHTML += content;
+    
+    if (totalPrice.innerHTML === "") {
+        totalPrice.innerHTML = "0";
+    }
+    priceTotal = parseFloat(totalPrice.innerHTML);
+    priceProd = parseFloat(price);
+
+    totalPrice.innerHTML = priceTotal + priceProd;
 }
-
-var cartBody = document.querySelector("#cart-body");
-
-content = addProdCart();
-cartBody.innerHTML += content;
-
-
-console.log(card);

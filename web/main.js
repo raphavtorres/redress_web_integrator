@@ -1,3 +1,5 @@
+// Products Lists
+
 var name_products = [
     "Blusão Em Moletom Com Bolso Canguru Com Lettering Fearless Preto",
     "Blusão Fechado Básico Em Moletom Com Capuz E Bolso Canguru Marrom", 
@@ -35,20 +37,15 @@ var desc_products = [
     "Bermuda jeans masculina, modelo slim, com bolsos e rasgos. A modelagem slim da peça ajusta elegantemente ao corpo, e seus rasgos dão aquele toque final super estiloso."
 ]
 
-function createModal(item) {
-    var name_elem = document.querySelector("#name_element");
-    var price_elem = document.querySelector("#price_elem");
-    var image_elem = document.querySelector("#image_elem");
-    var desc_elem = document.querySelector("#desc_elem");
-
-    name_elem.innerHTML = name_products[item];
-    price_elem.innerHTML = "R$ " + price_products[item].toFixed(2);
-    image_elem.src = images_products[item];
-    desc_elem.innerHTML = desc_products[item];
-}
+// Declaring variables
 
 var wrap = document.querySelector('.wrapper');
+var cartBody = document.querySelector("#cart-body");
+var totalPrice = document.querySelector("#total-price-cart");
+var productsInCart = [];
 
+
+// Creating cards
 for (var i = 0; i < name_products.length; i++) {
     var card = `
         <div class="card">
@@ -63,32 +60,46 @@ for (var i = 0; i < name_products.length; i++) {
             </div>
         </div>
     `;
-
     wrap.innerHTML += card;
 }
 
-var cartBody = document.querySelector("#cart-body");
-var totalPrice = document.querySelector("#total-price-cart");
+// Functions
+function createModal(item) {
+    var name_elem = document.querySelector("#name_element");
+    var price_elem = document.querySelector("#price_elem");
+    var image_elem = document.querySelector("#image_elem");
+    var desc_elem = document.querySelector("#desc_elem");
+
+    name_elem.innerHTML = name_products[item];
+    price_elem.innerHTML = "R$ " + price_products[item].toFixed(2);
+    image_elem.src = images_products[item];
+    desc_elem.innerHTML = desc_products[item];
+}
 
 function addProdCart(index, name, price, desc){
-    
-    var content = `
-    <div id="card-content-${index}" class="cart-content">
-        <img class="img-prod-cart" src="images/img-card/card-img-${index}.webp" alt="">
-        <div class="cart-content-text">
-            <div class="txt-and-delbtn">
-                <h3>${name}</h3>
-                <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
+    var amountProdCart = document.querySelector(`.amount-prod-cart-${index}`);
+    if (amountProdCart === null) {
+        productsInCart.push(index);
+        var content = `
+        <div id="card-content-${index}" class="cart-content">
+            <img class="img-prod-cart" src="images/img-card/card-img-${index}.webp" alt="">
+            <div class="cart-content-text">
+                <div class="txt-and-delbtn">
+                    <h3>${name}</h3>
+                    <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
+                </div>
+                <p>${desc}</p>
+                <input class="amount-prod-cart-${index}" type="number" name="" id="" value="1" min="1">
+                <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${(price).toFixed(2)}</h3>
             </div>
-            <p>${desc}</p>
-            <input class="amount-prod-cart" type="number" name="" id="" value="1" min="1">
-            <h3 class="prod-price-cart">R$ ${price.toFixed(2)}</h3>
         </div>
-    </div>
-    <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
-
-    cartBody.innerHTML += content;
-    
+        <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
+        
+        cartBody.innerHTML += content;
+    } else {
+        amountProdCart.value++;
+    }
+    amountProdCart.value = price * amountProdCart.value;
     if (totalPrice.innerHTML === "") {
         totalPrice.innerHTML = "0";
     }

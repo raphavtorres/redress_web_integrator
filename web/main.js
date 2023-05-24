@@ -59,7 +59,7 @@ for (var i = 0; i < name_products.length; i++) {
             <div>
                 <a onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
                     data-target=".bd-example-modal-lg">Details</a>
-                <a onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
+                <a data-toggle="modal" data-target="#modalCartSide" onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
             </div>
         </div>
     `;
@@ -95,7 +95,7 @@ function addProdCart(index, name, price, desc){
     priceTotal = parseFloat(totalPrice.innerHTML);
     priceProd = parseFloat(price);
 
-    totalPrice.innerHTML = priceTotal + priceProd;
+    totalPrice.innerHTML = (priceTotal + priceProd).toFixed(2);
 }
 
 function dellProdCart(index, price) {
@@ -107,5 +107,5 @@ function dellProdCart(index, price) {
     priceTotal = parseFloat(totalPrice.innerHTML);
     priceProd = parseFloat(price);
 
-    priceTotal -= priceProd;
+    totalPrice.innerHTML = (priceTotal - priceProd).toFixed(2);
 }

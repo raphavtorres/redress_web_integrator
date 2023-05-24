@@ -455,6 +455,46 @@ section {
 }
 
 /* CART */
+#cart-body {
+    margin: 1rem;
+    font-size: 0.9rem;
+}
+
+#cart-content {
+    display: flex;
+    height: fit-content;
+}
+
+#cart-content-text {
+    width: 100%;
+    margin-left: 1rem;
+}
+
+#txt-and-delbtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart-del-prod {
+    background-image: url(images/icon-del-prod.svg);
+    background-size: 1rem;
+    background-position: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    align-self: flex-end;
+}
+
+#img-prod-cart {
+    width: 7rem;
+    height: fit-content;
+}
+
+#prod-price-cart {
+    text-align: end;
+}
 
 #cart-footer {
     display: flex;

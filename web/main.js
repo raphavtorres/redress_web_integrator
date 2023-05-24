@@ -47,19 +47,6 @@ function createModal(item) {
     desc_elem.innerHTML = desc_products[item];
 }
 
-{/* 
-<div class="card">
-    <img src="images/card-img-1.webp" alt="">
-    <h5 class="card-text">Product Name</h5>
-    <hr width="80%" style="margin: auto;">
-    <p class="card-text">R$ 200,00</p>
-    <div>
-        <a onclick="createModal(0)" href="#" class="btn btn-primary" data-toggle="modal"
-            data-target=".bd-example-modal-lg">Details</a>
-        <a href="#" class="btn btn-primary cart-btn-card"></a>
-    </div>
-</div> */}
-
 var wrap = document.querySelector('.wrapper');
 
 for (var i = 0; i < name_products.length; i++) {
@@ -79,6 +66,32 @@ for (var i = 0; i < name_products.length; i++) {
 
     wrap.innerHTML += card;
 }
+
+
+function addProdCart(){
+    var content = `
+    <!-- PROD IMG -->
+    <div id="cart-content">
+        <img id="img-prod-cart" src="images/img-card/card-img-1.webp" alt="">
+        <div id="cart-content-text">
+            <div id="txt-and-delbtn">
+                <h3>Product Name</h3>
+        
+                <!-- ICON X -->
+                <button id="cart-del-prod"></button>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <h3 id="prod-price-cart">R$ 200,00</h3>
+        </div>
+    </div>
+    <hr width="100%" style="margin: 1rem auto;"></hr>`
+    return content;
+}
+
+var cartBody = document.querySelector("#cart-body");
+
+content = addProdCart();
+cartBody.innerHTML += content;
 
 
 console.log(card);

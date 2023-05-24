@@ -83,7 +83,7 @@ function addProdCart(img, name, price, desc){
             <h3 id="prod-price-cart">R$ ${price.toFixed(2)}</h3>
         </div>
     </div>
-    <hr width="9%" style="margin: 1rem 0"></hr>`
+    <hr width="90%" style="margin: 1rem 0"></hr>`
 
     cartBody.innerHTML += content;
     

@@ -514,6 +514,11 @@ section {
     border-radius: 5px;
 }
 
+.amount-prod-cart:focus {
+    border: 2px solid var(--blue);
+    outline: 0;
+}
+
 #cart-footer {
     display: flex;
     align-items: center;

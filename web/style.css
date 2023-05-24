@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -267,7 +267,7 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
     margin: auto;
-    
+
 }
 
 .card {
@@ -482,7 +482,7 @@ section {
 #div-btn-cart {
     display: flex;
     justify-content: center;
-    
+
 }
 
 #div-btn-cart button {
@@ -490,10 +490,10 @@ section {
     width: 70%;
 }
 
-
 footer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     background-color: white;
     height: 20vh;
 }
@@ -514,7 +514,6 @@ footer div {
     .modal-content {
         margin-top: 15%;
     }
-    
 }
 
 @media (max-width: 600px) {
@@ -531,5 +530,5 @@ footer div {
     .modal-content {
         margin-top: 20%;
     }
-    
+
 }

@@ -76,7 +76,7 @@ function createModal(item) {
     descElement.innerHTML = desc_products[item];
 
     btnAddToCart.addEventListener("click", addProdCart(
-        item, name_products[item], price_products[item].toFixed(2), desc_products[item]
+        `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
     ));
 }
 
@@ -135,9 +135,7 @@ function uploadPrice(index, price) {
 
 function dellProdCart(index) {  
     var pos = productsInCart.indexOf(`${index}`);
-    console.log("POS: " + pos);
     productsInCart.splice(pos, 1);
-    console.log(productsInCart);
     var elementToRemove = document.querySelector(`#card-content-${index}`);
     var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);
     cartBody.removeChild(elementToRemove);

@@ -42,6 +42,7 @@ var wrap = document.querySelector('.wrapper');
 var cartBody = document.querySelector("#cart-body");
 var totalPrice = document.querySelector("#total-price-cart");
 var productsInCart = [];
+var detailModals = [];
 
 
 // CREATING CARDS
@@ -54,7 +55,7 @@ for (var i = 0; i < name_products.length; i++) {
             <p class="card-text">R$ ${price_products[i].toFixed(2)}</p>
             <div>
                 <a id="link-open-detail" onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
-                    data-target=".bd-example-modal-lg">Details</a>
+                    data-target="#detail-modal-${i}">Details</a>
                 <a data-toggle="modal" data-target="#modalCartSide" onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
             </div>
         </div>
@@ -63,26 +64,87 @@ for (var i = 0; i < name_products.length; i++) {
 }
 
 // FUNCTIONS
-function createModal(item) {
-    var nameElement = document.querySelector("#name_element");
-    var priceElement = document.querySelector("#price_elem");
-    var imageElement = document.querySelector("#image_elem");
-    var descElement = document.querySelector("#desc_elem");
-    var btnAddToCart = document.querySelector("#add-cart-btn");
+// function createModal(item) {
+    // var nameElement = document.querySelector("#name-element");
+    // var priceElement = document.querySelector("#price-elem");
+    // var imageElement = document.querySelector("#image-elem");
+    // var descElement = document.querySelector("#desc-elem");
+    // var btnAddToCart = document.querySelector("#add-cart-btn");
 
-    try {
-        btnAddToCart.removeEventListener("click", addProdCartDecorator);
-    } finally  {
-        nameElement.innerHTML = name_products[item];
-        priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
-        imageElement.src = images_products[item];
-        descElement.innerHTML = desc_products[item];
 
-        btnAddToCart.addEventListener("click", addProdCartDecorator(
-            `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
-        ));
-    }
+    // nameElement.innerHTML = name_products[item];
+    // priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
+    // imageElement.src = images_products[item];
+    // descElement.innerHTML = desc_products[item];
+
+    // btnAddToCart.addEventListener("click", addProdCartDecorator(
+    //     `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
+    // ));
+
  
+// }
+
+
+function createModal(item) {
+    if (detailModals.indexOf(item) <= -1) {
+        detailModals.push(item);
+
+        var name = name_products[item];
+        var price = price_products[item].toFixed(2);
+        var desc = desc_products[item];
+        
+        var html = `
+        <div id="detail-modal-${item}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="div-img-modal">
+                        <img id="image-elem-${item}" src="${images_products[item]}" alt="">
+                    </div>
+                    <div class="div-img-details">
+                        <div class="prod-and-price-modal">
+                            <h1 id="name-element-${item}" class="title-modal">${name}</h1>
+                            <h2 id="price-elem-${item}" class="price-modal">R$ ${price}</h2>
+                        </div>
+                        <div class="div-detail-modal">
+                            <h3 class="detail-modal">Detalhes</h3>
+                            <p id="desc-elem-${item}">${desc}</p>
+                        </div>
+                        <div class="div-sizes-modal">
+                            <h3>Size</h3>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" value="p" checked>
+                                <label class="form-check-label" for="p">P</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" value="m">
+                                <label class="form-check-label" for="m">M</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" value="g">
+                                <label class="form-check-label" for="g">G</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" value="gg">
+                                <label class="form-check-label" for="gg">GG</label>
+                            </div>
+                        </div>
+                        <div class="div-btn-model">
+                            <button id="add-cart-btn-${item}" onclick="addProdCart(${item}, '${name}', ${price}, '${desc}');" data-dismiss="modal" data-toggle="modal" data-target="#modalCartSide" class="btn btn-add-cart-modal">Adicionar ao carrinho</button>
+                        </div>
+                        <div class="div-img-icon-model">
+                            <img src="images/icon-delivery truck.svg" alt="">
+                            <p>Frete grátis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+        var prodDetailSec = document.querySelector("#prod-detail-sec");
+        var htmlNode = document.createRange().createContextualFragment(html);
+        prodDetailSec.appendChild(htmlNode); 
+    }
 }
 
 function createCartProd(index, name, price, desc) {
@@ -107,22 +169,36 @@ function createCartProd(index, name, price, desc) {
     cartBody.appendChild(contentNode);    
 }
 
-function addProdCartDecorator(index, name, price, desc){
-    function addProdCart() {
-        if (productsInCart.indexOf(index) > -1) {
-            var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
-            if (amountProdCart === null) 
-                amountProdCart = 0;
-            amountProdCart.value++;
-        } else {
-            // Creating card if it doesn't exist
-            createCartProd(index, name, price, desc);
-        }
-        console.log(productsInCart);
-        uploadPrice(index, price);
+// function addProdCartDecorator(index, name, price, desc){
+//     function addProdCart() {
+//         if (productsInCart.indexOf(index) > -1) {
+//             var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+//             if (amountProdCart === null) 
+//                 amountProdCart = 0;
+//             amountProdCart.value++;
+//         } else {
+//             // Creating card if it doesn't exist
+//             createCartProd(index, name, price, desc);
+//         }
+//         console.log(productsInCart);
+//         uploadPrice(index, price);
+//     }
+//     return addProdCart;
+// }
+
+function addProdCart(index, name, price, desc) {
+    if (productsInCart.indexOf(index) > -1) {
+        var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+        if (amountProdCart === null) 
+            amountProdCart = 0;
+        amountProdCart.value++;
+    } else {
+        // Creating card if it doesn't exist
+        createCartProd(index, name, price, desc);
     }
-    return addProdCart;
+    uploadPrice(index, price);
 }
+
 
 function uploadPrice(index, price) {
     var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
@@ -142,9 +218,12 @@ function uploadPrice(index, price) {
     totalPrice.innerHTML = prices.toFixed(2);
 }
 
-function dellProdCart(index) {  
+function dellProdCart(index) { 
+    console.productsInCart;
     var pos = productsInCart.indexOf(`${index}`);
     productsInCart.splice(pos, 1);
+    console.productsInCart;
+
     var elementToRemove = document.querySelector(`#card-content-${index}`);
     var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);
     cartBody.removeChild(elementToRemove);
@@ -157,3 +236,4 @@ function dellProdCart(index) {
     allAmountProd.forEach(price => prices += parseFloat(price.innerHTML));
     totalPrice.innerHTML = prices.toFixed(2);
 }
+

@@ -98,12 +98,14 @@ function createCartProd(index, name, price, desc) {
 function addProdCart(index, name, price, desc){
     if (productsInCart.indexOf(index) > -1) {
         var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+        if (amountProdCart === null) 
+            amountProdCart = 0;
         amountProdCart.value++;
     } else {
         // Creating card if it doesn't exist
         createCartProd(index, name, price, desc);
     }
-
+    console.log(productsInCart);
     uploadPrice(index, price);
 }
 
@@ -125,7 +127,11 @@ function uploadPrice(index, price) {
     totalPrice.innerHTML = prices.toFixed(2);
 }
 
-function dellProdCart(index) {
+function dellProdCart(index) {  
+    var pos = productsInCart.indexOf(`${index}`);
+    console.log("POS: " + pos);
+    productsInCart.splice(pos, 1);
+    console.log(productsInCart);
     var elementToRemove = document.querySelector(`#card-content-${index}`);
     var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);
     cartBody.removeChild(elementToRemove);

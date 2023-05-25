@@ -70,14 +70,19 @@ function createModal(item) {
     var descElement = document.querySelector("#desc_elem");
     var btnAddToCart = document.querySelector("#add-cart-btn");
 
-    nameElement.innerHTML = name_products[item];
-    priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
-    imageElement.src = images_products[item];
-    descElement.innerHTML = desc_products[item];
+    try {
+        btnAddToCart.removeEventListener("click", addProdCartDecorator);
+    } finally  {
+        nameElement.innerHTML = name_products[item];
+        priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
+        imageElement.src = images_products[item];
+        descElement.innerHTML = desc_products[item];
 
-    btnAddToCart.addEventListener("click", addProdCart(
-        `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
-    ));
+        btnAddToCart.addEventListener("click", addProdCartDecorator(
+            `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
+        ));
+    }
+ 
 }
 
 function createCartProd(index, name, price, desc) {
@@ -102,18 +107,21 @@ function createCartProd(index, name, price, desc) {
     cartBody.appendChild(contentNode);    
 }
 
-function addProdCart(index, name, price, desc){
-    if (productsInCart.indexOf(index) > -1) {
-        var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
-        if (amountProdCart === null) 
-            amountProdCart = 0;
-        amountProdCart.value++;
-    } else {
-        // Creating card if it doesn't exist
-        createCartProd(index, name, price, desc);
+function addProdCartDecorator(index, name, price, desc){
+    function addProdCart() {
+        if (productsInCart.indexOf(index) > -1) {
+            var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+            if (amountProdCart === null) 
+                amountProdCart = 0;
+            amountProdCart.value++;
+        } else {
+            // Creating card if it doesn't exist
+            createCartProd(index, name, price, desc);
+        }
+        console.log(productsInCart);
+        uploadPrice(index, price);
     }
-    console.log(productsInCart);
-    uploadPrice(index, price);
+    return addProdCart;
 }
 
 function uploadPrice(index, price) {

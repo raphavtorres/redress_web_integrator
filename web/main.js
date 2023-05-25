@@ -37,15 +37,16 @@ var desc_products = [
     "Bermuda jeans masculina, modelo slim, com bolsos e rasgos. A modelagem slim da peça ajusta elegantemente ao corpo, e seus rasgos dão aquele toque final super estiloso."
 ]
 
-// Declaring variables
-
+// DECLARING VARIABLES
 var wrap = document.querySelector('.wrapper');
 var cartBody = document.querySelector("#cart-body");
 var totalPrice = document.querySelector("#total-price-cart");
 var productsInCart = [];
 
 
-// Creating cards
+// EVENT LISTENERS
+
+// CREATING CARDS
 for (var i = 0; i < name_products.length; i++) {
     var card = `
         <div class="card">
@@ -54,7 +55,7 @@ for (var i = 0; i < name_products.length; i++) {
             <hr width="80%" style="margin: auto;">
             <p class="card-text">R$ ${price_products[i].toFixed(2)}</p>
             <div>
-                <a onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
+                <a id="link-open-detail" onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
                     data-target=".bd-example-modal-lg">Details</a>
                 <a data-toggle="modal" data-target="#modalCartSide" onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
             </div>
@@ -63,7 +64,7 @@ for (var i = 0; i < name_products.length; i++) {
     wrap.innerHTML += card;
 }
 
-// Functions
+// FUNCTIONS
 function createModal(item) {
     var name_elem = document.querySelector("#name_element");
     var price_elem = document.querySelector("#price_elem");
@@ -76,28 +77,33 @@ function createModal(item) {
     desc_elem.innerHTML = desc_products[item];
 }
 
+function createCartProd(index, name, price, desc) {
+    productsInCart.push(index);
+    var content = `
+    <div id="card-content-${index}" class="cart-content">
+        <img class="img-prod-cart" src="images/img-card/card-img-${index}.webp" alt="">
+        <div class="cart-content-text">
+            <div class="txt-and-delbtn">
+                <h3>${name}</h3>
+                <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
+            </div>
+            <p>${desc}</p>
+            <input id="amount-prod-cart-${index}" class="amount-prod-cart" type="number" name="" value="1" min="1">
+            <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${(price).toFixed(2)}</h3>
+        </div>
+    </div>
+    <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
+    var contentNode = document.createRange().createContextualFragment(content);
+    cartBody.appendChild(contentNode);    
+}
+
 function addProdCart(index, name, price, desc){
     if (productsInCart.indexOf(index) > -1) {
         var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
         amountProdCart.value++;
     } else {
         // Creating card if it doesn't exist
-        productsInCart.push(index);
-        var content = `
-        <div id="card-content-${index}" class="cart-content">
-            <img class="img-prod-cart" src="images/img-card/card-img-${index}.webp" alt="">
-            <div class="cart-content-text">
-                <div class="txt-and-delbtn">
-                    <h3>${name}</h3>
-                    <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
-                </div>
-                <p>${desc}</p>
-                <input id="amount-prod-cart-${index}" class="amount-prod-cart" type="number" name="" value="1" min="1">
-                <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${(price).toFixed(2)}</h3>
-            </div>
-        </div>
-        <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
-        cartBody.innerHTML += content;     
+        createCartProd(index, name, price, desc);
     }
 
     // Uploading card info

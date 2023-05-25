@@ -92,6 +92,7 @@ function createCartProd(index, name, price, desc) {
                 <button onclick="dellProdCart(${index})" class="cart-del-prod"></button>
             </div>
             <p>${desc}</p>
+            <h3> Size: </h3><p>P</p>
             <input id="amount-prod-cart-${index}" onchange="uploadPrice(${index}, ${price})" class="amount-prod-cart" type="number" name="" value="1" min="1">
             <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${price}</h3>
         </div>

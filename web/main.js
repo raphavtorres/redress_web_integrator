@@ -77,8 +77,11 @@ function createModal(item) {
 }
 
 function addProdCart(index, name, price, desc){
-    var amountProdCart = document.querySelector(`.amount-prod-cart-${index}`);
-    if (amountProdCart === null) {
+    if (productsInCart.indexOf(index) > -1) {
+        var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+        amountProdCart.value++;
+    } else {
+        // Creating card if it doesn't exist
         productsInCart.push(index);
         var content = `
         <div id="card-content-${index}" class="cart-content">
@@ -89,24 +92,27 @@ function addProdCart(index, name, price, desc){
                     <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
                 </div>
                 <p>${desc}</p>
-                <input class="amount-prod-cart-${index}" type="number" name="" id="" value="1" min="1">
+                <input id="amount-prod-cart-${index}" class="amount-prod-cart" type="number" name="" value="1" min="1">
                 <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${(price).toFixed(2)}</h3>
             </div>
         </div>
         <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
-        
-        cartBody.innerHTML += content;
-    } else {
-        amountProdCart.value++;
+        cartBody.innerHTML += content;     
     }
-    amountProdCart.value = price * amountProdCart.value;
+
+    // Uploading card info
+    var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+    var priceProd = document.querySelector(`#prod-price-${index}`);
+    priceProd.value = price * amountProdCart.value;
+    priceProd.innerHTML = priceProd.value.toFixed(2);
     if (totalPrice.innerHTML === "") {
         totalPrice.innerHTML = "0";
     }
-    priceTotal = parseFloat(totalPrice.innerHTML);
+    priceFloat = parseFloat(totalPrice.innerHTML);
     priceProd = parseFloat(price);
 
-    totalPrice.innerHTML = (priceTotal + priceProd).toFixed(2);
+    totalPrice.innerHTML = (priceFloat + priceProd).toFixed(2);
+
 }
 
 function dellProdCart(index, price) {
@@ -115,8 +121,8 @@ function dellProdCart(index, price) {
     cartBody.removeChild(elementToRemove);
     cartBody.removeChild(hrToRemove);
 
-    priceTotal = parseFloat(totalPrice.innerHTML);
+    priceFloat = parseFloat(totalPrice.innerHTML);
     priceProd = parseFloat(price);
 
-    totalPrice.innerHTML = (priceTotal - priceProd).toFixed(2);
+    totalPrice.innerHTML = (priceFloat - priceProd).toFixed(2);
 }

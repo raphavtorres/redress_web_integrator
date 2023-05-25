@@ -44,8 +44,6 @@ var totalPrice = document.querySelector("#total-price-cart");
 var productsInCart = [];
 
 
-// EVENT LISTENERS
-
 // CREATING CARDS
 for (var i = 0; i < name_products.length; i++) {
     var card = `
@@ -85,10 +83,10 @@ function createCartProd(index, name, price, desc) {
         <div class="cart-content-text">
             <div class="txt-and-delbtn">
                 <h3>${name}</h3>
-                <button onclick="dellProdCart(${index}, ${price})" class="cart-del-prod"></button>
+                <button onclick="dellProdCart(${index})" class="cart-del-prod"></button>
             </div>
             <p>${desc}</p>
-            <input id="amount-prod-cart-${index}" class="amount-prod-cart" type="number" name="" value="1" min="1">
+            <input id="amount-prod-cart-${index}" onchange="uploadPrice(${index}, ${price})" class="amount-prod-cart" type="number" name="" value="1" min="1">
             <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${(price).toFixed(2)}</h3>
         </div>
     </div>
@@ -106,29 +104,37 @@ function addProdCart(index, name, price, desc){
         createCartProd(index, name, price, desc);
     }
 
-    // Uploading card info
+    uploadPrice(index, price);
+}
+
+function uploadPrice(index, price) {
     var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
+    var allAmountProd = document.querySelectorAll('.prod-price-cart');
     var priceProd = document.querySelector(`#prod-price-${index}`);
-    priceProd.value = price * amountProdCart.value;
-    priceProd.innerHTML = priceProd.value.toFixed(2);
+    priceProd.innerHTML = (price * amountProdCart.value).toFixed(2);
+
     if (totalPrice.innerHTML === "") {
         totalPrice.innerHTML = "0";
     }
-    priceFloat = parseFloat(totalPrice.innerHTML);
-    priceProd = parseFloat(price);
+    if (priceProd.innerHTML === "") {
+        priceProd.innerHTML = "0"
+    }
 
-    totalPrice.innerHTML = (priceFloat + priceProd).toFixed(2);
-
+    var prices = 0;
+    allAmountProd.forEach(priceElem => prices += parseFloat(priceElem.innerHTML));
+    totalPrice.innerHTML = prices.toFixed(2);
 }
 
-function dellProdCart(index, price) {
+function dellProdCart(index) {
     var elementToRemove = document.querySelector(`#card-content-${index}`);
     var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);
     cartBody.removeChild(elementToRemove);
     cartBody.removeChild(hrToRemove);
 
-    priceFloat = parseFloat(totalPrice.innerHTML);
-    priceProd = parseFloat(price);
 
-    totalPrice.innerHTML = (priceFloat - priceProd).toFixed(2);
+    var allAmountProd = document.querySelectorAll('.prod-price-cart');
+
+    var prices = 0;
+    allAmountProd.forEach(price => prices += parseFloat(price.innerHTML));
+    totalPrice.innerHTML = prices.toFixed(2);
 }

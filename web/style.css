@@ -354,7 +354,7 @@ section {
 
 .prod-and-price-modal h1{
     margin: 3% 0;
-    font-size: large;
+    font-size: 0.9rem;
 }
 
 .prod-and-price-modal h2{
@@ -566,14 +566,13 @@ footer div {
     margin: 3%;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
+    #carousel-sec {
+        margin-top: 10%;
+    }
     .nav-link {
         margin: 1rem 1rem -1rem 2rem;
     }
-
-    /* .div-icons-nav {
-        visibility: hidden;
-    } */
 
     .modal-content {
         margin-top: 15%;
@@ -593,6 +592,11 @@ footer div {
 
     .modal-content {
         margin-top: 20%;
+        font-size: 0.6rem;
+    }
+
+    #desc_elem {
+        font-size: 0.5rem;
     }
 
 }

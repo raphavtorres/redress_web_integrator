@@ -64,18 +64,24 @@ for (var i = 0; i < name_products.length; i++) {
 
 // FUNCTIONS
 function createModal(item) {
-    var name_elem = document.querySelector("#name_element");
-    var price_elem = document.querySelector("#price_elem");
-    var image_elem = document.querySelector("#image_elem");
-    var desc_elem = document.querySelector("#desc_elem");
+    var nameElement = document.querySelector("#name_element");
+    var priceElement = document.querySelector("#price_elem");
+    var imageElement = document.querySelector("#image_elem");
+    var descElement = document.querySelector("#desc_elem");
+    var btnAddToCart = document.querySelector("#add-cart-btn");
 
-    name_elem.innerHTML = name_products[item];
-    price_elem.innerHTML = "R$ " + price_products[item].toFixed(2);
-    image_elem.src = images_products[item];
-    desc_elem.innerHTML = desc_products[item];
+    nameElement.innerHTML = name_products[item];
+    priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
+    imageElement.src = images_products[item];
+    descElement.innerHTML = desc_products[item];
+
+    btnAddToCart.addEventListener("click", addProdCart(
+        item, name_products[item], price_products[item].toFixed(2), desc_products[item]
+    ));
 }
 
 function createCartProd(index, name, price, desc) {
+    price = parseFloat(price).toFixed(2);
     productsInCart.push(index);
     var content = `
     <div id="card-content-${index}" class="cart-content">
@@ -87,7 +93,7 @@ function createCartProd(index, name, price, desc) {
             </div>
             <p>${desc}</p>
             <input id="amount-prod-cart-${index}" onchange="uploadPrice(${index}, ${price})" class="amount-prod-cart" type="number" name="" value="1" min="1">
-            <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${(price).toFixed(2)}</h3>
+            <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${price}</h3>
         </div>
     </div>
     <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`

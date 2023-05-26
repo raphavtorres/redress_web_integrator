@@ -1,3 +1,3 @@
 # redress_web_integrator1
 
-raphavtorres.github.io
+https://raphavtorres.github.io/redress_web_integrator1/ 

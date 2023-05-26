@@ -56,11 +56,13 @@ for (var i = 0; i < name_products.length; i++) {
             <div>
                 <a id="link-open-detail" onclick="createModal(${i})" href="#" class="btn btn-primary" data-toggle="modal"
                     data-target="#detail-modal-${i}">Details</a>
-                <a data-toggle="modal" data-target="#modalCartSide" onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
+                
             </div>
         </div>
     `;
     wrap.innerHTML += card;
+
+    // <a data-toggle="modal" data-target="#modalCartSide" onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
 }
 
 // FUNCTIONS
@@ -166,7 +168,8 @@ function createCartProd(index, name, price, desc) {
     </div>
     <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
     var contentNode = document.createRange().createContextualFragment(content);
-    cartBody.appendChild(contentNode);    
+    cartBody.appendChild(contentNode); 
+
 }
 
 // function addProdCartDecorator(index, name, price, desc){
@@ -197,10 +200,11 @@ function addProdCart(index, name, price, desc) {
         createCartProd(index, name, price, desc);
     }
     uploadPrice(index, price);
+    console.log(productsInCart);
 }
 
 
-function uploadPrice(index, price) {
+function uploadPrice(index, price, amountProdCart) {
     var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
     var allAmountProd = document.querySelectorAll('.prod-price-cart');
     var priceProd = document.querySelector(`#prod-price-${index}`);
@@ -219,10 +223,9 @@ function uploadPrice(index, price) {
 }
 
 function dellProdCart(index) { 
-    console.productsInCart;
-    var pos = productsInCart.indexOf(`${index}`);
+    var pos = productsInCart.indexOf(index);
     productsInCart.splice(pos, 1);
-    console.productsInCart;
+    console.log(productsInCart);
 
     var elementToRemove = document.querySelector(`#card-content-${index}`);
     var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);

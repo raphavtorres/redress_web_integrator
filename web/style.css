@@ -591,9 +591,9 @@ section {
 }
 
 #about-sec p span{
-    color: var(--yellow);
-    font-weight: 400;
-    text-shadow: -0.5px 0 var(--shadow-blue), 0 0.5px var(--shadow-blue), 0.5px 0, 0 -0.5px var(--shadow-blue);
+    color: #f7a91a;
+    font-weight: 500;
+
 }
 
 #parag-final-about {

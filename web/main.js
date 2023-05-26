@@ -2,26 +2,26 @@
 
 var name_products = [
     "Blusão Em Moletom Com Bolso Canguru Com Lettering Fearless Preto",
-    "Blusão Fechado Básico Em Moletom Com Capuz E Bolso Canguru Marrom", 
-    "Jaqueta Com Capuz E Fechamento Frontal Preto", 
-    "Jaqueta Puffer Em Poliamida Com Gomos E Forro De Sherpa Preto", 
-    "Calça Jogger Cargo Em Poliamida Com Bolsos Utilitários Marrom", 
-    "Calça Slim Em Soft Touch Com Textura E Barra Dobrada Bege", 
+    "Blusão Fechado Básico Em Moletom Com Capuz E Bolso Canguru Marrom",
+    "Jaqueta Com Capuz E Fechamento Frontal Preto",
+    "Jaqueta Puffer Em Poliamida Com Gomos E Forro De Sherpa Preto",
+    "Calça Jogger Cargo Em Poliamida Com Bolsos Utilitários Marrom",
+    "Calça Slim Em Soft Touch Com Textura E Barra Dobrada Bege",
     "Bermuda Slim Jeans Com Rasgos E Bolsos Preto Fosco"
 ]
 var price_products = [
-    179.90, 
-    159.90, 
-    319.90, 
-    359.90, 
-    179.90, 
-    199.90, 
+    179.90,
+    159.90,
+    319.90,
+    359.90,
+    179.90,
+    199.90,
     119.90
 ]
 var images_products = [
-    "images/img-card/card-img-0.webp", 
-    "images/img-card/card-img-1.webp", 
-    "images/img-card/card-img-2.webp", 
+    "images/img-card/card-img-0.webp",
+    "images/img-card/card-img-1.webp",
+    "images/img-card/card-img-2.webp",
     "images/img-card/card-img-3.webp",
     "images/img-card/card-img-4.webp",
     "images/img-card/card-img-5.webp",
@@ -30,10 +30,10 @@ var images_products = [
 var desc_products = [
     "Blusão em moletom com gola com capuz, punhos ajustados e bolso canguru com etiquetinha aplicada com lettering Fearless. Confeccionado em material responsável.",
     "Blusão masculino em moletom, com capuz, cava raglan e punhos ajustados. Além de mega confortável por seu tecido ser em moletom, essa peça é cheia de estilo, além de muito descolada. ",
-    "Jaqueta com capuz em cor contrastante, fechamento frontal por zíper e bolsos.", 
-    "Aconchegante e confortável, a jaqueta puffer com capuz, zíper, gomos e forro de sherpa, é perfeita para compor seus visuais de inverno. O modelo cheio de estilo, promove looks perfeitos para usar em diversos momentos casuais.", 
-    "Calça jogger cargo, com cós elástico, cordão para ajuste, bolsos cargo com zíper e punhos ajustados.", 
-    "Calça masculina em tecido soft touch, modelo slim, confeccionada com material mais sustentável, com leve textura, cós elástico, cordão para ajuste, bolsos e barra dobrada.", 
+    "Jaqueta com capuz em cor contrastante, fechamento frontal por zíper e bolsos.",
+    "Aconchegante e confortável, a jaqueta puffer com capuz, zíper, gomos e forro de sherpa, é perfeita para compor seus visuais de inverno. O modelo cheio de estilo, promove looks perfeitos para usar em diversos momentos casuais.",
+    "Calça jogger cargo, com cós elástico, cordão para ajuste, bolsos cargo com zíper e punhos ajustados.",
+    "Calça masculina em tecido soft touch, modelo slim, confeccionada com material mais sustentável, com leve textura, cós elástico, cordão para ajuste, bolsos e barra dobrada.",
     "Bermuda jeans masculina, modelo slim, com bolsos e rasgos. A modelagem slim da peça ajusta elegantemente ao corpo, e seus rasgos dão aquele toque final super estiloso."
 ]
 
@@ -67,23 +67,23 @@ for (var i = 0; i < name_products.length; i++) {
 
 // FUNCTIONS
 // function createModal(item) {
-    // var nameElement = document.querySelector("#name-element");
-    // var priceElement = document.querySelector("#price-elem");
-    // var imageElement = document.querySelector("#image-elem");
-    // var descElement = document.querySelector("#desc-elem");
-    // var btnAddToCart = document.querySelector("#add-cart-btn");
+// var nameElement = document.querySelector("#name-element");
+// var priceElement = document.querySelector("#price-elem");
+// var imageElement = document.querySelector("#image-elem");
+// var descElement = document.querySelector("#desc-elem");
+// var btnAddToCart = document.querySelector("#add-cart-btn");
 
 
-    // nameElement.innerHTML = name_products[item];
-    // priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
-    // imageElement.src = images_products[item];
-    // descElement.innerHTML = desc_products[item];
+// nameElement.innerHTML = name_products[item];
+// priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
+// imageElement.src = images_products[item];
+// descElement.innerHTML = desc_products[item];
 
-    // btnAddToCart.addEventListener("click", addProdCartDecorator(
-    //     `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
-    // ));
+// btnAddToCart.addEventListener("click", addProdCartDecorator(
+//     `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
+// ));
 
- 
+
 // }
 
 
@@ -94,7 +94,7 @@ function createModal(item) {
         var name = name_products[item];
         var price = price_products[item].toFixed(2);
         var desc = desc_products[item];
-        
+
         var html = `
         <div id="detail-modal-${item}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -114,21 +114,21 @@ function createModal(item) {
                         <div class="div-sizes-modal">
                             <h3>Size</h3>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio" value="p" checked>
+                                <input class="form-check-input" type="radio" name="radio-${item}" value="P">
                                 <label class="form-check-label" for="p">P</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio" value="m">
+                                <input class="form-check-input" type="radio" name="radio-${item}" value="M">
                                 <label class="form-check-label" for="m">M</label>
                             </div>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio" value="g">
+                                <input class="form-check-input" type="radio" name="radio-${item}" value="G">
                                 <label class="form-check-label" for="g">G</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio" value="gg">
+                                <input class="form-check-input" type="radio" name="radio-${item}" value="GG">
                                 <label class="form-check-label" for="gg">GG</label>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ function createModal(item) {
         </div>`
         var prodDetailSec = document.querySelector("#prod-detail-sec");
         var htmlNode = document.createRange().createContextualFragment(html);
-        prodDetailSec.appendChild(htmlNode); 
+        prodDetailSec.appendChild(htmlNode);
     }
 }
 
@@ -161,14 +161,14 @@ function createCartProd(index, name, price, desc) {
                 <button onclick="dellProdCart(${index})" class="cart-del-prod"></button>
             </div>
             <p>${desc}</p>
-            <h3> Size: </h3><p>P</p>
+            <h3> Size: </h3><p id="size-parag-${index}">P</p>
             <input id="amount-prod-cart-${index}" onchange="uploadPrice(${index}, ${price})" class="amount-prod-cart" type="number" name="" value="1" min="1">
             <h3 id="prod-price-${index}" class="prod-price-cart">R$ ${price}</h3>
         </div>
     </div>
     <hr id="hr-cart-content-${index}" width="90%" style="margin: 1rem 0"></hr>`
     var contentNode = document.createRange().createContextualFragment(content);
-    cartBody.appendChild(contentNode); 
+    cartBody.appendChild(contentNode);
 
 }
 
@@ -192,15 +192,22 @@ function createCartProd(index, name, price, desc) {
 function addProdCart(index, name, price, desc) {
     if (productsInCart.indexOf(index) > -1) {
         var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
-        if (amountProdCart === null) 
+        if (amountProdCart === null)
             amountProdCart = 0;
         amountProdCart.value++;
     } else {
         // Creating card if it doesn't exist
         createCartProd(index, name, price, desc);
     }
+    changeRadioValue(index);
     uploadPrice(index, price);
     console.log(productsInCart);
+}
+
+function changeRadioValue(item) {
+    var radioValue = document.querySelector(`input[name="radio-${item}"]:checked`).value;
+    var parag = document.querySelector(`#size-parag-${item}`);
+    parag.innerHTML = radioValue;
 }
 
 
@@ -222,7 +229,7 @@ function uploadPrice(index, price, amountProdCart) {
     totalPrice.innerHTML = prices.toFixed(2);
 }
 
-function dellProdCart(index) { 
+function dellProdCart(index) {
     var pos = productsInCart.indexOf(index);
     productsInCart.splice(pos, 1);
     console.log(productsInCart);

@@ -66,26 +66,6 @@ for (var i = 0; i < name_products.length; i++) {
 }
 
 // FUNCTIONS
-// function createModal(item) {
-// var nameElement = document.querySelector("#name-element");
-// var priceElement = document.querySelector("#price-elem");
-// var imageElement = document.querySelector("#image-elem");
-// var descElement = document.querySelector("#desc-elem");
-// var btnAddToCart = document.querySelector("#add-cart-btn");
-
-
-// nameElement.innerHTML = name_products[item];
-// priceElement.innerHTML = "R$ " + price_products[item].toFixed(2);
-// imageElement.src = images_products[item];
-// descElement.innerHTML = desc_products[item];
-
-// btnAddToCart.addEventListener("click", addProdCartDecorator(
-//     `${item}`, name_products[item], price_products[item].toFixed(2), desc_products[item]
-// ));
-
-
-// }
-
 
 function createModal(item) {
     if (detailModals.indexOf(item) <= -1) {

@@ -148,6 +148,8 @@ table {
     --yellow: #F2C778;
     --dark-yellow: #D9A86D;
     --black: #131313;
+    --shadow-blue: #2c3b5a59;
+    --white: whitesmoke;
 
     /* color: azure; */
 }
@@ -565,6 +567,41 @@ section {
     width: 70%;
 }
 
+/* ABOUT SECTION */
+#about-sec {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--white);
+}
+
+#about-sec h1{
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 4rem;
+    margin-bottom: 3rem;
+    color: var(--dark-yellow);
+}
+
+#about-sec div{
+    margin: auto;
+    width: 50%;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+#about-sec p span{
+    color: var(--yellow);
+    font-weight: 400;
+    text-shadow: -0.5px 0 var(--shadow-blue), 0 0.5px var(--shadow-blue), 0.5px 0, 0 -0.5px var(--shadow-blue);
+}
+
+#parag-final-about {
+    width: 100%!important;
+    text-align: center!important;
+    font-weight: 500;
+    color: var(--blue);
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -578,6 +615,9 @@ footer div {
 }
 
 @media (max-width: 1024px) {
+    #about-sec div{
+        width: 85%;
+    }
     #carousel-sec {
         margin-top: 10%;
     }
@@ -609,5 +649,4 @@ footer div {
     #desc_elem {
         font-size: 0.5rem;
     }
-
 }

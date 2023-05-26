@@ -441,6 +441,7 @@ section {
     background-image: url(images/back-arrow-white.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 0.6rem;
 }
 
 #div-header-cart {
@@ -603,80 +604,24 @@ section {
 }
 
 /* CONTACT SECTION */
-/* #contact-sec {
-    display: flex;
-    height: 100vh;
-}
-
-#contato-container {
-    margin: auto;
-    background: var(--white);
-    width: 90vw;
-}
-
-#contato-container form{
-    padding: 0px 40px;
-    box-sizing: border-box;
-}
-
-form .txt-form{
-    border: none;
-    position: relative;
-    border-bottom: 2px solid var(--blue);
-    margin: 30px 0;
-}
-
-.txt-form label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #adadad;
-    transform: translateY(-50%);
-    font-size: 0.9em;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.txt-form span::before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--yellow);
-    transition: .5s;
-}
-
-.text-form input {
-    border: none!important;
-    outline: none!important;
-    border-width: 0px!important;
-    border-style: none;
-    border-color: none;
-    border-image: none;
-}
-
-.txt-form input:focus ~ label, .txt-form input:valid ~ label{
-    top: -5px;
-    color: var(--yellow);
-}
-
-.txt-form input:focus ~ span::before, .txt-form input:valid ~ span::before {
-    width: 100%;
-} */
-
-/*sect_contato*/
 #contact-sec {
     padding-top: 5em;
     height: 100vh;
     background-color: var(--verde_escuro);
 }
 
+#contact-sec h1 {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 4rem;
+    margin-bottom: 3rem;
+    color: var(--white);
+}
+
 #contato_container {
     margin: auto;
     background: var(--branco_card);
-    width: 90vw;
+    width: 50%;
 }
 
 #contato_container form{
@@ -783,6 +728,10 @@ footer div {
     .modal-content {
         margin-top: 15%;
     }
+
+    #contato_container {
+        width: 70%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -805,7 +754,7 @@ footer div {
         font-size: 0.5rem;
     }
 
-    #contato-container {
-        max-width: 800px;
+    #contato_container {
+        width: 80%;
     }
 }

@@ -520,6 +520,17 @@ section {
     outline: 0;
 }
 
+.div-amount-cart {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.div-amount-cart h3, p {
+    align-content: center;
+    width: fit-content;
+    display: inline;
+}
+
 #cart-footer {
     display: flex;
     align-items: center;

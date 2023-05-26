@@ -61,12 +61,9 @@ for (var i = 0; i < name_products.length; i++) {
         </div>
     `;
     wrap.innerHTML += card;
-
-    // <a data-toggle="modal" data-target="#modalCartSide" onclick="addProdCart('${i}', '${name_products[i]}', ${price_products[i].toFixed(2)}, '${desc_products[i]}');" href="#" class="btn btn-primary cart-btn-card"></a>
 }
 
 // FUNCTIONS
-
 function createModal(item) {
     if (detailModals.indexOf(item) <= -1) {
         detailModals.push(item);
@@ -151,23 +148,6 @@ function createCartProd(index, name, price, desc) {
     cartBody.appendChild(contentNode);
 
 }
-
-// function addProdCartDecorator(index, name, price, desc){
-//     function addProdCart() {
-//         if (productsInCart.indexOf(index) > -1) {
-//             var amountProdCart = document.querySelector(`#amount-prod-cart-${index}`);
-//             if (amountProdCart === null) 
-//                 amountProdCart = 0;
-//             amountProdCart.value++;
-//         } else {
-//             // Creating card if it doesn't exist
-//             createCartProd(index, name, price, desc);
-//         }
-//         console.log(productsInCart);
-//         uploadPrice(index, price);
-//     }
-//     return addProdCart;
-// }
 
 function addProdCart(index, name, price, desc) {
     if (productsInCart.indexOf(index) > -1) {

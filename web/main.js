@@ -161,7 +161,6 @@ function addProdCart(index, name, price, desc) {
     }
     changeRadioValue(index);
     uploadPrice(index, price);
-    console.log(productsInCart);
 }
 
 function changeRadioValue(item) {
@@ -192,7 +191,6 @@ function uploadPrice(index, price, amountProdCart) {
 function dellProdCart(index) {
     var pos = productsInCart.indexOf(index);
     productsInCart.splice(pos, 1);
-    console.log(productsInCart);
 
     var elementToRemove = document.querySelector(`#card-content-${index}`);
     var hrToRemove = document.querySelector(`#hr-cart-content-${index}`);

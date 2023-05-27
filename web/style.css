@@ -570,7 +570,7 @@ section {
 
 /* ABOUT SECTION */
 #about-sec {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--white);
 }
@@ -606,8 +606,9 @@ section {
 /* CONTACT SECTION */
 #contact-sec {
     padding-top: 5em;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--verde_escuro);
+    margin-bottom: 8rem;
 }
 
 #contact-sec h1 {
@@ -703,15 +704,40 @@ input[type="submit"]:hover{
 
 /* FOOTER */
 footer {
+    height: 20%;
+}
+
+#main-footer-sec {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     background-color: white;
-    height: 20%;
 }
 
-footer div {
+#main-footer-sec div {
     margin: 3%;
+}
+
+#payment-method-footer {
+    text-align: center;
+}
+
+#payment-method-footer img {
+    height: 4rem;
+}
+
+#social-media-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#social-media-footer img {
+    height: 1.3rem;
+}
+
+#footer-bottom-sec {
+    padding: 2rem 0;
+    background-color: #E0E0E0;
 }
 
 @media (max-width: 1024px) {

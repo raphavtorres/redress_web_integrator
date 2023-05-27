@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class App {
@@ -15,13 +14,15 @@ public class App {
         String path = "C:\\Users\\rapha\\Desktop\\redress_web_integrator1\\RedressData.csv";
         BufferedReader reader = null;
         String line = "";
+        int i = 0;
+        String[] column = {};
 
         ArrayList<String[]> elementsList = new ArrayList<String[]>();
 
+        // Reading CSV
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
-            int i = 0;
-            String[] column = {};
+            
             while ((line = reader.readLine()) != null) {
                 if (i > 0) {
                     String[] row = line.split(",");
@@ -31,20 +32,7 @@ public class App {
                     column = line.split(",");
                 }    
                 i++;
-                
-            }
-            String[][] elementsArray = elementsList.toArray(new String[0][]);
-
-            System.out.println(Arrays.toString(elementsArray));
-
-            JTable table = new JTable(elementsArray, column);
-            JScrollPane scrollPane = new JScrollPane(table);
-    
-            JFrame frame = new JFrame();
-            frame.add(scrollPane);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
+            } 
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -52,6 +40,21 @@ public class App {
         finally {
             reader.close();
         }
+
+        String[][] elementsArray = elementsList.toArray(new String[0][]);
+
+        // Creating Window
+        JTable table = new JTable(elementsArray, column);
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        JFrame window = new JFrame();
+        window.setTitle("REDRESS PRODUCTS");
+        window.setSize(500, 500);
+        window.add(scrollPane);
+        
+        window.pack();
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
 

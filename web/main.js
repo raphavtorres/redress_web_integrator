@@ -91,7 +91,7 @@ function createModal(item) {
                         <div class="div-sizes-modal">
                             <h3>Size</h3>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio-${item}" value="P">
+                                <input class="form-check-input" type="radio" name="radio-${item}" value="P" checked>
                                 <label class="form-check-label" for="p">P</label>
                             </div>
 

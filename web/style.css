@@ -619,13 +619,13 @@ section {
     color: var(--white);
 }
 
-#contato_container {
+.contato_container {
     margin: auto;
     background: var(--branco_card);
     width: 50%;
 }
 
-#contato_container form{
+.contato_container form{
     padding: 1rem 4rem 0rem 4rem;
     box-sizing: border-box;
     background-color: var(--white);
@@ -740,6 +740,54 @@ footer {
     background-color: #E0E0E0;
 }
 
+/* PAYMENT SCREEN */
+#payment-sec {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#payment-div {
+    background-color: var(--white);
+    width: 35%;
+    height: 28rem;
+    background-color: #F5F5F5;
+}
+
+#payment-container {
+    width: 30%;
+    margin: 0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.753);
+    border: none;
+}
+
+#payment-container form div {
+    display: flex;
+    align-items: center;
+}
+
+#payment-container form label {
+    margin: 0 0.5rem;
+}
+
+#payment-container form img {
+    height: 3.5rem;
+}
+
+#pix-img {
+    height: 1.8rem!important;
+}
+
+.form-check-input {
+    border-color: var(--blue);
+}
+.form-check-input:checked {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+
 @media (max-width: 1024px) {
     #about-sec div{
         width: 85%;
@@ -755,7 +803,7 @@ footer {
         margin-top: 15%;
     }
 
-    #contato_container {
+    .contato_container {
         width: 70%;
     }
 }
@@ -780,7 +828,7 @@ footer {
         font-size: 0.5rem;
     }
 
-    #contato_container {
+    .contato_container {
         width: 80%;
     }
 }

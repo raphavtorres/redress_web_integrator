@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
     <title>REDRESS</title>
 </head>
-
 <body>
     <header>
         <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
@@ -48,49 +47,49 @@
         </nav>
     </header>
     <main>
-        <section id="carousel-sec">
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/carousel_1.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/carousel_2.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/carousel_3.png" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
+        <section id="payment-sec">
+            <div id="payment-div">
+                <h1>Pagamento</h1>
             </div>
+            <div id="payment-container" class="contato_container" >
+                <form>
+                    <h2>Forma de Pagamento</h2>
+                    <div class="txt_form">
+                        <input type="email" id="email_usuario" name="email" required>
+                        <span></span>
+                        <label for="email_usuario">Coloque seu E-mail*</label>
+                    </div>
+                    <div class="txt_form">
+                        <input type="text" id="nome_usuario" name="name" required>
+                        <span></span>
+                        <label for="nome_usuario">Coloque seu CEP*</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">Cartão </label>
+                        <img src="images/payment-methods/mastercard.png" alt="">
+                        <img src="images/payment-methods/visa.png" alt="">
+                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">PIX</label>
+                        <img src="images/payment-methods/pix.png" id="pix-img" alt="">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">PAYPAL</label>
+                        <img src="images/payment-methods/paypal.png" alt="">
+                    </div>
 
-        </section>
-        <section id="products-sec">
-            <div id="products-title">
-                <h1>Produtos</h1>
-            </div>
-            <div class="wrapper">
-                <!-- CARDS HERE -->
+                    <div id="div_submit">
+                        <input type="submit" value="Comprar">
+                    </div>
+                </form>
             </div>
         </section>
-        <section id="prod-detail-sec">
-            <!-- DETAIL MODALS HERE -->
-        </section>
+
+
         <section id="shop-cart-sec">
             <div class="modal fade" id="modalCartSide" tabindex="-1" role="dialog"
                 aria-labelledby="TituloModalCentralizado" aria-hidden="true">
@@ -122,54 +121,6 @@
                 </div>
             </div>
         </section>
-        <section id="about-sec">
-            <h1>Sobre</h1>
-            <div>
-                <p>
-                Bem-vindo à <span>Redress</span>, o seu destino final para moda masculina de alta qualidade. Aqui, acreditamos que a elegância é uma forma de expressão, e nossas roupas de marca são cuidadosamente selecionadas para que você possa se destacar em todos os momentos.
-                </p><br><br>
-                <p>
-                Na Redress, sabemos que a moda masculina não se trata apenas de seguir tendências passageiras, mas de encontrar um estilo que seja verdadeiramente seu. É por isso que reunimos uma cuidadosa seleção de peças que combinam qualidade <span>excepcional</span>, design sofisticado e um toque de individualidade.
-                </p><br><br>
-                <p>
-                A experiência de compra na Redress é <span>marcante</span>. Nossa equipe está pronta para oferecer um atendimento personalizado, auxiliando você a encontrar as peças que se encaixam perfeitamente no seu estilo e nas suas preferências. Acreditamos que a <span>moda é mais do que apenas vestir roupas</span>, é uma forma de se expressar e se sentir confiante.
-                </p><br><br>
-                <p>
-                Então, permita que a Redress seja seu guia no mundo da moda masculina elegante. Explore nossa coleção, encontre peças que combinem com você e desfrute do prazer de se vestir com distinção. Estamos aqui para ajudá-lo a redefinir seu estilo e a alcançar uma presença marcante em qualquer lugar que vá.
-                </p><br><br>
-                <div id="parag-final-about">
-                    <p>
-                    Bem-vindo à Redress, onde a moda encontra a elegância masculina.
-                    </p><br><br>
-                </div>
-            </div>
-        </section>
-        <section id="contact-sec">
-            <div class="contato_container">
-                <h1>Entre em Contato</h1>
-                <form>
-                    <div class="txt_form">
-                        <input type="text" id="nome_usuario" name="name" required>
-                        <span></span>
-                        <label for="nome_usuario">Coloque seu nome</label>
-                    </div>
-                    <div class="txt_form">
-                        <input type="email" id="email_usuario" name="email" required>
-                        <span></span>
-                        <label for="email_usuario">Coloque seu e-mail</label>
-                    </div>
-                    <div class="txt_form">
-                        <input type="text" id="msg_usuario" name="message" required>
-                        <span></span>
-                        <label for="msg_usuario">Coloque sua mensagem</label>
-                    </div>
-                    <div id="div_submit">
-                        <input type="submit">
-                    </div>
-                </form>
-            </div>
-        </section> 
-        
     </main>
     <footer>
         <section id="main-footer-sec">
@@ -211,7 +162,7 @@
             </div>
         </section>
     </footer>
-
+    
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -223,5 +174,4 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

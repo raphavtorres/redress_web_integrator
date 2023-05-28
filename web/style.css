@@ -748,11 +748,52 @@ footer {
     justify-content: center;
     align-items: center;
 }
-#payment-div {
+#purchase-resume {
     background-color: var(--white);
     width: 35%;
     height: 28rem;
     background-color: #F5F5F5;
+    padding: 2rem;
+}
+
+#purchase-resume h1 {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+#purchase-resume h3 {
+    font-size: 0.8rem;
+    margin: 1.8rem 1rem;
+}
+
+#purchase-resume div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#purchase-resume div #plus-icon-cupom{
+    height: 1.3rem;
+    margin-right: 1.5rem;
+}
+
+#purchase-resume div #info-icon {
+    height: 1rem;
+    margin-left: 1.3rem;
+}
+
+#purchase-resume div span {
+    color: #f7a91a;
+    font-weight: 500;
+}
+
+#purchase-resume div .payment-price {
+    margin-right: 1rem;
+}
+
+.payment-price-bold {
+    font-weight: 600;
 }
 
 #payment-container {
@@ -765,6 +806,11 @@ footer {
 #payment-container form div {
     display: flex;
     align-items: center;
+}
+
+#payment-container form h1 {
+    font-size: 1rem;
+    text-align: center;
 }
 
 #payment-container form label {

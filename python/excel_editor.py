@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 
 
 path_file = '..\\redress_web_integrator1\\python\\info.json'
@@ -10,4 +11,4 @@ def read_json():
     return info
 
 
-# print(read_json())
+print(read_json())

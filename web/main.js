@@ -213,9 +213,13 @@ function dellProdCart(index) {
     totalPrice.innerHTML = prices.toFixed(2);
 }
 
-function createJson(total="", cep="") {
+
+// GETTING CEP FROM USER AND SAVING IT IN JSON FILE
+var cep = document.querySelector('#cep-user').value;
+document.querySelector('#btn-buy-checkout').addEventListener("click", createJson(cep));
+
+function createJson(cep="") {
     const json = {
-        "total": total,
         "cep": cep,
     }
 

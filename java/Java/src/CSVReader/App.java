@@ -3,6 +3,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
@@ -11,7 +12,10 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        String path = "C:\\Users\\50050376837\\Desktop\\redress_web_integrator1-1\\RedressData.csv";
+        // String path = "C:\\Users\\50050376837\\Desktop\\redress_web_integrator1-1\\RedressData.csv";
+        String path = new File("RedressData.csv").getAbsolutePath();
+        System.out.println(path);
+
         BufferedReader reader = null;
         String line = "";
         int i = 0;

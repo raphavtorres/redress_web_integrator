@@ -1,3 +1,4 @@
+package ExcelWriter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import org.apache.poi.ss.usermodel.Cell;
@@ -5,11 +6,14 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ModExcel {
+public class WriteExcel {
     public static void main(String[] args) {
         try {
             // Carrega o arquivo do Excel
-            FileInputStream arquivo = new FileInputStream("C:\\Users\\50050376837\\Documents\\java\\TesteExcel\\src\\main\\java\\RedressRoutes.xlsx");
+            // FileInputStream arquivo = new FileInputStream("C:\\Users\\50050376837\\Documents\\java\\TesteExcel\\src\\main\\java\\RedressRoutes.xlsx");
+            String path = new File("RedressRoutes.xlsx").getAbsolutePath();
+            System.out.println(path);
+            FileInputStream arquivo = new FileInputStream(path);
             XSSFWorkbook workbook = new XSSFWorkbook(arquivo);
 
             // Obtém a planilha desejada

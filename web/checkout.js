@@ -31,3 +31,21 @@ function createJson() {
     link.download = fileName;
     link.click();
 }
+
+
+// CHANGING IMAGES WITH HOVER
+var iconMailNav = document.querySelector('#icon-mail-nav');
+iconMailNav.addEventListener("mouseover", function() {
+    iconMailNav.src="images/nav-icons/icon-mail-hover.svg";
+});
+iconMailNav.addEventListener("mouseout", function() {
+    iconMailNav.src="images/nav-icons/icon-mail.svg";
+});
+
+var iconSearchNav = document.querySelector('#icon-search-nav');
+iconSearchNav.addEventListener("mouseover", function() {
+    iconSearchNav.src="images/nav-icons/icon-search-hover.svg";
+});
+iconSearchNav.addEventListener("mouseout", function() {
+    iconSearchNav.src="images/nav-icons/icon-search.svg";
+});

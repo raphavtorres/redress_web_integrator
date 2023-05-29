@@ -203,7 +203,7 @@ nav {
     width: 1rem;
     height: 1rem;
     vertical-align: middle;
-    background-image: url(images/menu-hamburguer.svg);
+    background-image: url(images/nav-icons/menu-hamburguer.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -310,18 +310,6 @@ section {
     background-color: var(--dark-yellow)!important;
     border: none;
     color: white!important;
-}
-
-.cart-btn-card {
-    background-color: var(--yellow);
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    background-image: url(images/icon-cart.svg);
-    background-size: 1rem;
-    border: none;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .card img {
@@ -438,7 +426,7 @@ section {
     width: 10%;
     background-color: transparent;
     border: none;
-    background-image: url(images/back-arrow-white.svg);
+    background-image: url(images/icon-cart/back-arrow-white.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 0.6rem;
@@ -491,7 +479,7 @@ section {
 }
 
 .cart-del-prod {
-    background-image: url(images/icon-del-prod.svg);
+    background-image: url(images/icon-cart/icon-del-prod.svg);
     background-size: 1rem;
     background-position: center;
     width: 1.5rem;
@@ -566,6 +554,23 @@ section {
 #div-btn-cart button {
     height: 2.5rem;
     width: 70%;
+    padding: 0px;
+}
+
+#div-btn-cart button a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#div-btn-cart button a:hover{
+    color: var(--white);
+    text-decoration: none;
 }
 
 /* ABOUT SECTION */
@@ -746,12 +751,14 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
 }
 #purchase-resume {
     background-color: var(--white);
     width: 35%;
     height: 28rem;
+    min-width: fit-content;
     background-color: #F5F5F5;
     padding: 2rem;
 }
@@ -797,6 +804,7 @@ footer {
 }
 
 #payment-container {
+    min-width: fit-content;
     width: 30%;
     margin: 0;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.753);
@@ -852,6 +860,19 @@ footer {
     .contato_container {
         width: 70%;
     }
+
+    #payment-sec {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 878px) {
+    #payment-sec {
+        padding: 6rem 0rem 2rem 0rem;
+    }
+    #purchase-resume, #payment-container {
+        margin: 0.5rem 1rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -877,4 +898,5 @@ footer {
     .contato_container {
         width: 80%;
     }
+   
 }

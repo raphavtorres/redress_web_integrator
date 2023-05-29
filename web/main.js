@@ -41,9 +41,17 @@ var desc_products = [
 var wrap = document.querySelector('.wrapper');
 var cartBody = document.querySelector("#cart-body");
 var totalPrice = document.querySelector("#total-price-cart");
+var btnBuyCart = document.querySelector("#btn-buy-cart");
 var productsInCart = [];
 var detailModals = [];
 
+
+// SENDING TOTAL PRICE TO CHECKOUT
+function sendTotalPriceCheckout() {
+    const totalPriceCheck = totalPrice;
+    localStorage.setItem('totalPriceCheck', totalPriceCheck.innerHTML);
+    window.location.href = 'checkout.html';
+}
 
 // CREATING CARDS
 for (var i = 0; i < name_products.length; i++) {
@@ -91,7 +99,7 @@ function createModal(item) {
                         <div class="div-sizes-modal">
                             <h3>Size</h3>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio-${item}" value="P">
+                                <input class="form-check-input" type="radio" name="radio-${item}" value="P" checked>
                                 <label class="form-check-label" for="p">P</label>
                             </div>
 
@@ -205,3 +213,22 @@ function dellProdCart(index) {
     totalPrice.innerHTML = prices.toFixed(2);
 }
 
+
+// GETTING CEP FROM USER AND SAVING IT IN JSON FILE
+var cep = document.querySelector('#cep-user').value;
+document.querySelector('#btn-buy-checkout').addEventListener("click", createJson(cep));
+
+function createJson(cep="") {
+    const json = {
+        "cep": cep,
+    }
+
+    const jsonString = JSON.stringify(json, null, 2);
+    const fileName = 'info.json';
+    const link = document.createElement('a');
+
+    
+    link.href = URL.createObjectURL(new Blob([jsonString], { type: 'application/json' }));
+    link.download = fileName;
+    link.click();
+}

@@ -14,7 +14,7 @@
     <header>
         <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-                <img src="images/logo_black.svg" alt="">
+                <img src="images/nav-icons/logo_black.svg" alt="">
             </a>
             <button class="navbar-toggler me-2" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -36,12 +36,8 @@
                     </li>
                 </ul>
                 <div class="div-icons-nav">
-                    <img src="images/icon-mail.svg" alt="">
-                    <img src="images/icon-search.svg" alt="">
-
-                    <a href="#" data-toggle="modal" data-target="#modalCartSide">
-                        <img src="images/icon-cart.svg" alt="">
-                    </a>
+                    <img src="images/nav-icons/icon-mail.svg" alt="">
+                    <img src="images/nav-icons/icon-search.svg" alt="">
                 </div>
             </div>
         </nav>
@@ -75,17 +71,17 @@
                 <form>
                     <h1>Forma de Pagamento</h2>
                     <div class="txt_form">
-                        <input type="email" id="email_usuario" name="email" required>
+                        <input type="email" id="email-user" name="email" required>
                         <span></span>
-                        <label for="email_usuario">Coloque seu E-mail*</label>
+                        <label for="email-user">Coloque seu E-mail*</label>
                     </div>
                     <div class="txt_form">
-                        <input type="text" id="nome_usuario" name="name" required>
+                        <input type="text" id="cep-user" name="name" required>
                         <span></span>
-                        <label for="nome_usuario">Coloque seu CEP*</label>
+                        <label for="cep-user">Coloque seu CEP*</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                         <label class="form-check-label" for="flexRadioDefault1">Cartão </label>
                         <img src="images/payment-methods/mastercard.png" alt="">
                         <img src="images/payment-methods/visa.png" alt="">
@@ -103,44 +99,12 @@
                     </div>
 
                     <div id="div_submit">
-                        <input type="submit" value="Comprar">
+                        <input type="submit" value="Comprar" id="btn-buy-checkout" onclick="createJson(cep='13100488')">
                     </div>
                 </form>
             </div>
         </section>
 
-
-        <section id="shop-cart-sec">
-            <div class="modal fade" id="modalCartSide" tabindex="-1" role="dialog"
-                aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-cart modal-dialog-centered" role="document">
-                    <div id="shop-cart" class="modal-content modal-content-cart">
-                        <div id="cart-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"></button>
-                            <div id="div-header-cart">
-                                <img src="images/icon-cart-white.svg" alt="">
-                                <h2>Carrinho de Compras</h2>
-                            </div>
-                        </div>
-                        <div id="cart-body">
-                            <!-- CART CONTENT HERE -->
-                        </div>
-                        <div id="cart-footer">
-                            <div id="div-footer-cart">
-                                <div id="div-price-cart">
-                                    <h3>SUBTOTAL</h3>
-                                    <p>R$ <span id="total-price-cart"></span></p>
-                                </div>
-                                <div id="div-btn-cart">
-                                    <button type="button" class="btn btn-primary"><a href="checkout.html">Finalizar compra</a></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
     </main>
     <footer>
         <section id="main-footer-sec">
@@ -173,7 +137,7 @@
             <div id="payment-method-footer">
                 <h5>Métodos de Pagamento</h5>
                 <br>
-                <img src="images/payment-methods.png" alt="">
+                <img src="images/payment-methods/payment-methods.webp" alt="">
             </div>
         </section>
         <section id="footer-bottom-sec">
@@ -182,6 +146,17 @@
             </div>
         </section>
     </footer>
+
+    <script>
+        // GETTING TOTAL PRICE FROM INDEX.HTML
+        const totalPriceCheck = localStorage.getItem('totalPriceCheck');
+        console.log(totalPriceCheck);
+        var priceValue = document.querySelectorAll(".payment-price");
+        priceValue.forEach(element => {
+            element.innerHTML = totalPriceCheck;
+        });
+        
+    </script>
     
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

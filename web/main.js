@@ -213,22 +213,3 @@ function dellProdCart(index) {
     totalPrice.innerHTML = prices.toFixed(2);
 }
 
-
-// GETTING CEP FROM USER AND SAVING IT IN JSON FILE
-var cep = document.querySelector('#cep-user').value;
-document.querySelector('#btn-buy-checkout').addEventListener("click", createJson(cep));
-
-function createJson(cep="") {
-    const json = {
-        "cep": cep,
-    }
-
-    const jsonString = JSON.stringify(json, null, 2);
-    const fileName = 'info.json';
-    const link = document.createElement('a');
-
-    
-    link.href = URL.createObjectURL(new Blob([jsonString], { type: 'application/json' }));
-    link.download = fileName;
-    link.click();
-}

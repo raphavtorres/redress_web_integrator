@@ -76,7 +76,7 @@
                         <label for="email-user">Coloque seu E-mail*</label>
                     </div>
                     <div class="txt_form">
-                        <input type="text" id="cep-user" name="name" required>
+                        <input type="text" id="cep-user" name="cep" required>
                         <span></span>
                         <label for="cep-user">Coloque seu CEP*</label>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
 
                     <div id="div_submit">
-                        <input type="submit" value="Comprar" id="btn-buy-checkout" onclick="createJson(cep='13100488')">
+                        <input type="submit" value="Comprar" id="btn-buy-checkout" onclick="createJson();">
                     </div>
                 </form>
             </div>
@@ -146,19 +146,7 @@
             </div>
         </section>
     </footer>
-
-    <script>
-        // GETTING TOTAL PRICE FROM INDEX.HTML
-        const totalPriceCheck = localStorage.getItem('totalPriceCheck');
-        console.log(totalPriceCheck);
-        var priceValue = document.querySelectorAll(".payment-price");
-        priceValue.forEach(element => {
-            element.innerHTML = totalPriceCheck;
-        });
-        
-    </script>
-    
-    <script src="main.js"></script>
+    <script src="checkout.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

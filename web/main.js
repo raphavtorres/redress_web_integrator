@@ -205,7 +205,6 @@ function dellProdCart(index) {
     cartBody.removeChild(elementToRemove);
     cartBody.removeChild(hrToRemove);
 
-
     var allAmountProd = document.querySelectorAll('.prod-price-cart');
 
     var prices = 0;

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        String path = "C:\\Users\\rapha\\Desktop\\redress_web_integrator1\\RedressData.csv";
+        String path = "C:\\Users\\50050376837\\Desktop\\redress_web_integrator1-1\\RedressData.csv";
         BufferedReader reader = null;
         String line = "";
         int i = 0;
@@ -57,4 +57,3 @@ public class App {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
-

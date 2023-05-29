@@ -15,12 +15,12 @@ def read_json():
 cep = read_json()['cep']
 
 
-def to_excel_pandas():
-    print(cep)
-    table = pd.read_excel("python\\xlsx\\RedressRoutes.xlsx")
-    table.loc[3, 'Unnamed: 2'] = cep
+# def to_excel_pandas():
+#     print(cep)
+#     table = pd.read_excel("python\\xlsx\\RedressRoutes.xlsx")
+#     table.loc[3, 'Unnamed: 2'] = cep
 
-    table.to_excel("python\\xlsx\\RedressRoutesPandas.xlsx")
+#     table.to_excel("python\\xlsx\\RedressRoutesPandas.xlsx")
 
 
 spreadsheet = load_workbook("python\\xlsx\\RedressRoutes.xlsx")

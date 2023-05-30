@@ -30,8 +30,8 @@ class RedressScraper():
         print("========== CLOTHES: ==========")
 
         products_dict = {
-            'title': [],
-            'price': []
+            'Nome': [],
+            'Preço': []
         }
 
         counter = 1
@@ -44,8 +44,8 @@ class RedressScraper():
                     By.XPATH, self.map['price']['xpath'].replace('#counter#', str(counter))).text
                 print(price)
 
-                products_dict['title'].append(title)
-                products_dict['price'].append(price)
+                products_dict['Nome'].append(title)
+                products_dict['Preço'].append(price)
                 counter += 1
             except Exception:
                 break

@@ -11,25 +11,25 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class WriteExcel {
     public static void main(String[] args) {
         try {
-            // Carrega o arquivo do Excel
-            // FileInputStream arquivo = new FileInputStream("C:\\Users\\50050376837\\Documents\\java\\TesteExcel\\src\\main\\java\\RedressRoutes.xlsx");
-            String path = new File("RedressRoutes.xlsx").getAbsolutePath();
+            // READING EXCEL FILE
+            String path = new File("src\\main\\java\\org\\example\\RedressRoutes.xlsx").getAbsolutePath();
             System.out.println(path);
             FileInputStream arquivo = new FileInputStream(path);
             XSSFWorkbook workbook = new XSSFWorkbook(arquivo);
 
-            // Obtém a planilha desejada
+            // GETTING SHEET
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            // Obtém a linha e a célula específica
+            // GETTING CELL
             Row row = sheet.getRow(4);
             Cell cell = row.getCell(2);
 
-            // Define o novo valor da célula
-            cell.setCellValue("Novo Valor");
+            // CHANGING CELL VALUE
+            cell.setCellValue("SALVE");
 
-            // Salva as alterações no arquivo do Excel
-            FileOutputStream outFile = new FileOutputStream("C:\\Users\\50050376837\\Documents\\java\\TesteExcel\\src\\main\\java\\Results/RedressRoutes2.xlsx");
+            // SAVING A NEW FILE WITH MODIFICATIONS
+            String fileExcel = new File("src\\main\\java\\RedressRoutesResult.xlsx").getAbsolutePath();
+            FileOutputStream outFile = new FileOutputStream(fileExcel);
             workbook.write(outFile);
             outFile.close();
 

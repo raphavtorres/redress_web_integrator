@@ -14,8 +14,7 @@ import java.util.ArrayList;
 
 public class ReadCSV {
     public static void main(String[] args) throws Exception {
-        // String path = "C:\\Users\\50050376837\\Desktop\\redress_web_integrator1-1\\RedressData.csv";
-        String path = new File("RedressData.csv").getAbsolutePath();
+        String path = new File("src\\main\\java\\org\\example\\RedressData.csv").getAbsolutePath();
         System.out.println(path);
 
         BufferedReader reader = null;

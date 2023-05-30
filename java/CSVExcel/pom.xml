@@ -21,5 +21,10 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.0.0</version>
+    </dependency>
   </dependencies>
 </project>

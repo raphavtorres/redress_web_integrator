@@ -7,7 +7,8 @@ from panda_to_csv import pandaToCSV
 
 class RedressScraper():
     def __init__(self) -> None:
-        self.url = 'https://raphavtorres.github.io/redress_web_integrator1/web/'
+        self.url = 'http://127.0.0.1:5500/web/'
+        # self.url = 'https://raphavtorres.github.io/redress_web_integrator1/web/'
 
         self.map = {
             "title": {

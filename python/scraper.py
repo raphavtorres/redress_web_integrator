@@ -19,9 +19,13 @@ class RedressScraper():
             }
         }
 
-        options = webdriver.ChromeOptions()
+        # options = webdriver.ChromeOptions()
+        # options.add_argument("--headless")
+        # self.driver = webdriver.Chrome(options=options)
+        
+        options = webdriver.EdgeOptions()
         options.add_argument("--headless")
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Edge(options=options)
 
     def open_site(self):
         self.driver.get(self.url)

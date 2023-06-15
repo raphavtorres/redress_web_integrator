@@ -85,11 +85,11 @@
                 <h1>Produtos</h1>
             </div>
             <div class="wrapper">
-                <!-- CARDS HERE -->
+                <!-- Cards created in JS inserted here -->
             </div>
         </section>
         <section id="prod-detail-sec">
-            <!-- DETAIL MODALS HERE -->
+            <!-- Detail modal created in JS inserted here -->
         </section>
         <section id="shop-cart-sec">
             <div class="modal fade" id="modalCartSide" tabindex="-1" role="dialog"
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <div id="cart-body">
-                            <!-- CART CONTENT HERE -->
+                            <!-- Cart content created in JS inserted here -->
                         </div>
                         <div id="cart-footer">
                             <div id="div-footer-cart">
@@ -147,7 +147,7 @@
         <section id="contact-sec">
             <div class="contato_container">
                 <h1>Entre em Contato</h1>
-                <form>
+                <form action="https://formsubmit.co/raphaeltorresprofissional@gmail.com" method="POST">
                     <div class="txt_form">
                         <input type="text" id="nome_usuario" name="name" required>
                         <span></span>
@@ -166,10 +166,13 @@
                     <div id="div_submit">
                         <input type="submit">
                     </div>
+                    <input type="hidden" name="_subject" value="Mensagem: Contato REDRESS">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/web/thanks.html">
+                    <input type="hidden" name="_autoresponse" value="Obrigado por entrar em contato! Nossa equipe logo te retornará com uma resposta. ||Essa é uma mensagem automática, por favor, não responda||">
                 </form>
             </div>
         </section> 
-        
     </main>
     <footer>
         <section id="main-footer-sec">

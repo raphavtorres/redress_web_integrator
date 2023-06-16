@@ -5,19 +5,16 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
-public class ReadCSVFunctions {
-    private String filePath;
-    private String[] columnNames;
-    private String[][] data;
-
-//    Constructor
+public class ReadCSVFunctions extends ReaderParent {
+    // Constructor
     public ReadCSVFunctions(String filePath) {
-        this.filePath = filePath;
+        super(filePath);
     }
 
-//    Methods
+    @Override
     public void readData() {
         BufferedReader reader = null;
         String line = "";
@@ -26,8 +23,9 @@ public class ReadCSVFunctions {
         ArrayList<String[]> rows = new ArrayList<>();
 
         try {
+            // creating reader-
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"));
-
+            // reading lines if they're not empty
             while ((line = reader.readLine()) != null) {
                 if (rowCount == 0) {
                     columnNames = line.split(",");
@@ -37,6 +35,7 @@ public class ReadCSVFunctions {
                 }
                 rowCount++;
             }
+            // checking for errors in reading
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -49,10 +48,13 @@ public class ReadCSVFunctions {
             }
         }
 
+        // creating array with an array of rows
         data = rows.toArray(new String[0][]);
     }
 
+    @Override
     public void displayTable() {
+        // creating table from data array
         JTable table = new JTable(data, columnNames);
         JScrollPane scrollPane = new JScrollPane(table);
 

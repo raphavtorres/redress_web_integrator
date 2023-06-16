@@ -1,15 +1,18 @@
 package org.example;
 
 public abstract class ReaderParent {
-    private String filePath;
-    private String[] columnNames;
-    private String[][] data;
+    // creating class attributes
+    protected String filePath;
+    protected String[] columnNames;
+    protected String[][] data;
 
-    //    Constructor
+    // Constructor
     public ReaderParent(String filePath) {
         this.filePath = filePath;
     }
 
-    public abstract readData();
-    public abstract displayTable();
+    // creating abstract methods
+    public abstract void readData();
+
+    public abstract void displayTable();
 }

@@ -2,7 +2,7 @@ package org.example;
 
 import java.io.File;
 
-public class ReadCSV2  {
+public class ReadCSV {
     public static void main(String[] args) {
         // getting file path
         String filePath = new File("src\\main\\java\\org\\example\\RedressData.csv").getAbsolutePath();
